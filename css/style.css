@@ -1,16 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Dosis:400,700);
+
 /*-------------------------------------------------*\
 	#GENERAL
 \*-------------------------------------------------*/
 
+/* Typography */
+p, span, a {
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Dosis", sans-serif;
+	font-weight: 700;
+
+}
 
 /*-------------------------------------------------*\
 	#HEADER
 \*-------------------------------------------------*/
 
+header {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+header #logo img {
+	width: 100%;
+}
+
 header ul {
 	list-style-type: none;
 	float: right;
 	overflow: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 header ul li  {
@@ -28,7 +52,6 @@ header ul li a {
 }
 
 header ul li a:hover {
-	background-color: red;
 	text-decoration: none;
 	color: white;
 }
@@ -39,7 +62,38 @@ header li a:hover:not(.active) {
 
 header .active {
     background-color: #4CAF50;
+    color: white;
 }
+
+
+
+
+/*-------------------------------------------------*\
+	#MAIN
+\*-------------------------------------------------*/
+
+.slider {
+	height: 450px;
+}
+
+.slider.home{
+	background: 
+              linear-gradient(
+                     rgba(0, 0,0, 0.60), 
+                     rgba(0, 0, 0, 0.60)
+              ),
+              url(/img/slideHome.jpg);
+       -webkit-background-size: 100%;
+       background-size: 100%;
+       background-repeat: no-repeat;
+}
+
+.services .fa{
+	color: green;
+	font-size: 7em;
+}
+
+
 
 
 /*-------------------------------------------------*\
@@ -49,6 +103,7 @@ header .active {
 
 /* Smartphones and small devices < 768px */ 
 @media screen and (max-width: 768px) {
+	
 	/* Menu */
 	header ul {
 		width: 100%;
@@ -58,5 +113,10 @@ header .active {
 
 	header ul li {
 		width: 100%;
+	}
+
+	/* Main */
+	.slider {
+		display: none;
 	}
 }
