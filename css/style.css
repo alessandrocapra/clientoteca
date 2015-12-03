@@ -25,12 +25,15 @@ h1, h2, h3, h4, h5, h6 {
 \*-------------------------------------------------*/
 
 header {
-	margin-bottom: 30px;
-	margin-top: 30px;
+
 }
 
 header #logo img {
 	width: 100%;
+}
+
+header nav {
+	overflow: hidden;
 }
 
 header ul {
@@ -47,8 +50,8 @@ header ul li  {
 
 header ul li a {
 	display: block;
-	padding: 20px 20px;
-	color: black;
+	padding: 60px 20px;
+	color: #6B5F51;
 	font-size: 1em;
 	font-weight: bold;
 	text-align: center;
@@ -62,7 +65,7 @@ header ul li a:hover {
 }
 
 header li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #6CBD45;
 }
 
 header .active {
@@ -79,11 +82,30 @@ header .active {
 \*-------------------------------------------------*/
 
 main {
-	padding: 30px 0;
+	padding-bottom: 30px;
 }
 
 .slider {
-	height: 450px;
+	height: 500px;
+}
+
+.slider .motto {
+	position: relative;
+	top: 10%;
+}
+
+.slider .motto h1, .slider p {
+	color: white;
+}
+
+.slider .motto h1 {
+	font-size: 5em;
+	color: #6CBD45;
+}
+
+.slider .motto p {
+	font-size: 2em;
+	font-weight: 700;
 }
 
 .slider.home{
@@ -158,6 +180,9 @@ footer ul {
 		width: 100%;
 	}
 
+	header ul li a {
+		padding: 5px 0;
+	}
 	/* Main */
 
 	main {
@@ -165,6 +190,7 @@ footer ul {
 	}
 
 	.slider {
-		display: none;
+		height: 300px;
+		background-size: 100% auto;
 	}
 }
