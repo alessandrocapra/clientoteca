@@ -1,13 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Dosis:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Dosis:400,700);
 
 /*-------------------------------------------------*\
 	#GENERAL
 \*-------------------------------------------------*/
 
 /* Typography */
-p, span, a {
-	font-family: "Montserrat", sans-serif;
-	font-size: 1.2em;
+p, span, a, li {
+	font-family: "Lato", sans-serif;
+	font-size: 1.3em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 
 }
+
+
+
+
 
 /*-------------------------------------------------*\
 	#HEADER
@@ -45,6 +49,7 @@ header ul li a {
 	display: block;
 	padding: 20px 20px;
 	color: black;
+	font-size: 1em;
 	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
@@ -68,9 +73,14 @@ header .active {
 
 
 
+
 /*-------------------------------------------------*\
 	#MAIN
 \*-------------------------------------------------*/
+
+main {
+	padding: 30px 0;
+}
 
 .slider {
 	height: 450px;
@@ -88,10 +98,40 @@ header .active {
        background-repeat: no-repeat;
 }
 
-.services .fa{
-	color: green;
-	font-size: 7em;
+.services {
+	text-align: justify;
 }
+
+.services .fa{
+	color: #6CBD45;
+	font-size: 10em;
+}
+
+.services .head {
+	text-align: center;
+}
+
+
+
+
+
+/*-------------------------------------------------*\
+	#FOOTER
+\*-------------------------------------------------*/
+
+footer {
+	text-align: center;
+	background-color: darkgrey;
+	margin-top: 20px;
+	padding: 30px 0;
+}
+
+footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
 
 
 
@@ -100,11 +140,14 @@ header .active {
 	#MEDIA QUERIES
 \*-------------------------------------------------*/
 
-
 /* Smartphones and small devices < 768px */ 
 @media screen and (max-width: 768px) {
 	
-	/* Menu */
+	/* Header */
+	header {
+		margin-bottom: 0;
+	}
+
 	header ul {
 		width: 100%;
 		margin: 0;
@@ -116,6 +159,11 @@ header .active {
 	}
 
 	/* Main */
+
+	main {
+		padding: 0;
+	}
+
 	.slider {
 		display: none;
 	}
