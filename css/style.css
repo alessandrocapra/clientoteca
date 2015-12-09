@@ -24,12 +24,13 @@ h1, h2, h3, h4, h5, h6 {
 	#HEADER
 \*-------------------------------------------------*/
 
-header {
-
+header #logo h2{
+	margin-top: 0;
+	margin-left: 15px;
 }
 
 header #logo img {
-	width: 100%;
+	width: 85%;
 }
 
 header nav {
@@ -50,7 +51,7 @@ header ul li  {
 
 header ul li a {
 	display: block;
-	padding: 60px 20px;
+	padding: 57px 20px;
 	color: #6B5F51;
 	font-size: 1em;
 	font-weight: bold;
@@ -65,7 +66,7 @@ header ul li a:hover {
 }
 
 header li a:hover:not(.active) {
-    background-color: #6CBD45;
+    color: #6CBD45;
 }
 
 header .active {
@@ -86,7 +87,7 @@ main {
 }
 
 .slider {
-	height: 500px;
+	height: 350px;
 }
 
 .slider .motto {
@@ -114,14 +115,18 @@ main {
                      rgba(0, 0,0, 0.60), 
                      rgba(0, 0, 0, 0.60)
               ),
-              url(/img/slideHome.jpg);
+              url(../img/slideHome.jpg);
        -webkit-background-size: 100%;
        background-size: 100%;
        background-repeat: no-repeat;
 }
 
+.slider.map {
+
+}
+
 .services {
-	text-align: justify;
+	text-align: left;
 }
 
 .services .fa{
@@ -154,6 +159,11 @@ footer ul {
 	padding: 0;
 }
 
+footer ul.vertical li {
+	display: inline-block;
+	padding: 0px 15px;
+}
+
 
 
 
@@ -161,14 +171,21 @@ footer ul {
 /*-------------------------------------------------*\
 	#MEDIA QUERIES
 \*-------------------------------------------------*/
-
-/* Smartphones and small devices < 768px */ 
-@media screen and (max-width: 768px) {
+/* Smartphones */
+@media screen and (max-width: 360px) {
 	
 	/* Header */
-	header {
-		margin-bottom: 0;
+	header #logo h2 {
+		text-align: center;
+		margin-left: 0;
 	}
+
+	header #logo img {
+		width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}	
 
 	header ul {
 		width: 100%;
@@ -181,16 +198,53 @@ footer ul {
 	}
 
 	header ul li a {
-		padding: 5px 0;
+		padding: 10px 0;
 	}
+
+	/* Main */
+	.slider {
+		height: 200px;
+		background-size: 100% auto;
+		background-position: center top;
+	}
+
+	.slider .motto {
+		top: -3%;
+	}
+
+	.slider .motto h1 {
+		font-size: 3em;
+	}
+
+	.slider .motto p {
+		font-size: 1.5em;
+	}
+
+	/* Footer */
+	footer h3 {
+		margin-top: 45px;
+	}
+}
+
+/* Tablets and small devices < 768px */ 
+@media screen and (min-width: 361px and max-width: 768px) {
+
+	/* Header */
+	header {
+		margin-bottom: 0;
+	}
+
+	header #logo h2 {
+		text-align: left;
+	}
+
+	header #logo img {
+		width: 40%;
+	}
+
 	/* Main */
 
 	main {
 		padding: 0;
-	}
-
-	.slider {
-		height: 300px;
-		background-size: 100% auto;
 	}
 }

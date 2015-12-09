@@ -9,6 +9,33 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+      	function initialize() {
+
+      		var myLatLang = { lat: 45.911723, lng: 10.874259 }
+       	var mapCanvas = document.getElementById('map');
+        	
+        	var mapOptions = {
+          		center: myLatLang,
+          		zoom: 16,
+          		draggable: false,
+          		scrollwheel: false,
+          		disableDefaultUI: true,
+          		mapTypeId: google.maps.MapTypeId.ROADMAP
+        	}
+
+    //     	var marker = new google.maps.Marker({
+    // 			map: map,
+    // 			position: myLatLng,
+    // 			title: 'Hello World!'
+  		// });
+
+        	var map = new google.maps.Map(mapCanvas, mapOptions);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body>
 	<header class="container-fluid">
@@ -19,8 +46,8 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="#" class="active">Home</a></li>
-					<li><a href="chi-siamo.html">Chi siamo</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#" class="active">Chi siamo</a></li>
 					<li><a href="#">Servizi</a></li>
 					<li><a href="#">Area Interesse</a></li>
 				</ul>
@@ -30,11 +57,11 @@
 	
 
 	<main>
-		<div class="container-fluid slider home">
-			<div class="motto col-xs-12 col-sm-6">
+		<div id="map" class="container-fluid slider">
+			<!-- <div class="motto col-xs-12 col-sm-6">
 				<h1>Trova nuovi clienti!</h1>
 				<p>Un metodo testato, pratico e veloce per trovare nuovi clienti.</p>
-			</div>
+			</div> -->
 		</div>
 		<div class="container">
 			<div class="row">
