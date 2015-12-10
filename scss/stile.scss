@@ -16,14 +16,6 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-/* Animations */
-@keyframe menuborder {
-	from	{border-bottom: none; }
-	to 		{border-bottom: 2px solid green;}
-}
-
-
-
 
 /*-------------------------------------------------*\
 	#HEADER
@@ -63,8 +55,6 @@ header ul li a {
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
-	animation-name: menuborder;
-    	animation-duration: 4s;
 }
 
 header ul li a:hover {
@@ -235,7 +225,7 @@ footer ul.vertical li {
 }
 
 /* Tablets and small devices < 768px */ 
-@media screen and (min-width: 361px and max-width: 768px) {
+@media screen and (min-width: 361px) and (max-width: 768px) {
 
 	/* Header */
 	header {
