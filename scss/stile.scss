@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700|Dosis:400,700);
 
+/* Variables */
+$verdeClientoteca : #6CBD45;
+
+
 /*-------------------------------------------------*\
 	#GENERAL
 \*-------------------------------------------------*/
@@ -21,60 +25,59 @@ h1, h2, h3, h4, h5, h6 {
 	#HEADER
 \*-------------------------------------------------*/
 
-header #logo h2{
-	margin-top: 0;
-	margin-left: 15px;
+header {
+	#logo {
+		h2 {
+			margin-top: 0;
+			margin-left: 15px;
+		}
+
+		img {
+			width: 85%;
+		}
+
+	}
+
+	nav {
+		overflow: hidden;
+	}
+	
+	ul {
+		list-style-type: none;
+		float: right;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+
+		li {
+			float: left;
+			
+			a {
+				display: block;
+				padding: 57px 20px;
+				color: #6B5F51;
+				font-size: 1em;
+				font-weight: bold;
+				text-align: center;
+				text-transform: uppercase;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+					color: white;
+				}
+
+				&:hover:not(.active) {
+					color: $verdeClientoteca;
+				}
+			}
+		}
+	}
+	.active {
+		background-color: #4CAF50;
+    		color: white;
+	}
 }
-
-header #logo img {
-	width: 85%;
-}
-
-header nav {
-	overflow: hidden;
-}
-
-header ul {
-	list-style-type: none;
-	float: right;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-}
-
-header ul li  {
-	float: left;
-}
-
-header ul li a {
-	display: block;
-	padding: 57px 20px;
-	color: #6B5F51;
-	font-size: 1em;
-	font-weight: bold;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-
-header ul li a:hover {
-	text-decoration: none;
-	color: white;
-}
-
-header li a:hover:not(.active) {
-    color: #6CBD45;
-
-}
-
-header .active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-
-
-
 
 /*-------------------------------------------------*\
 	#MAIN
@@ -82,16 +85,30 @@ header .active {
 
 main {
 	padding-bottom: 30px;
+
+	.slider {
+		height: 350px;
+	}
+	
+	.slider .motto {
+		position: relative;
+		top: 10%;
+
+		h1 {
+			font-size: 5em;
+			color: $verdeClientoteca;
+		}
+
+		p {
+			font-size: 2em;
+			font-weight: 700;
+			color: white;
+		}
+	}
 }
 
-.slider {
-	height: 350px;
-}
 
-.slider .motto {
-	position: relative;
-	top: 10%;
-}
+
 
 .slider .motto h1, .slider p {
 	color: white;
@@ -99,7 +116,7 @@ main {
 
 .slider .motto h1 {
 	font-size: 5em;
-	color: #6CBD45;
+	color: $verdeClientoteca;
 }
 
 .slider .motto p {
@@ -115,7 +132,6 @@ main {
               ),
               url(../img/slideHome.jpg);
        -webkit-background-size: 100%;
-       background-size: 100%;
        background-repeat: no-repeat;
 }
 
@@ -128,7 +144,7 @@ main {
 }
 
 .services .fa{
-	color: #6CBD45;
+	color:$verdeClientoteca;
 	font-size: 10em;
 }
 
