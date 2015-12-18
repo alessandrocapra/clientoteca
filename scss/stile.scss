@@ -1,25 +1,82 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Dosis:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,700);
 
-/* Variables */
+/* Colors */
 $verdeClientoteca : #6CBD45;
+$grigioClientoteca : #6A5F51;
+$darkgrey: darkgrey;
 
+
+/* Fonts */
+$regular : 400;
+$bold : 700;
+$body-text : 16px;
+$font-body : "Raleway", sans-serif;
+$font-titles: "Montserrat", sans-serif;
+
+/* Margins and paddings and whatever */
+$section-margin: 30px;
+$section-padding: 20px;
+$border-radius-default: 5px;
+
+/* Mixins */
+@mixin circle($diametro) {
+	width: $diametro;
+	height: $diametro;
+	line-height: $diametro;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: $section-margin;
+	border-radius: 50%;
+}
 
 /*-------------------------------------------------*\
 	#GENERAL
 \*-------------------------------------------------*/
 
 /* Typography */
+
 p, span, a, li {
-	font-family: "Lato", sans-serif;
-	font-size: 1.3em;
+	font-family: $font-body;
+	font-weight: $regular;
+	font-size: $body-text;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Dosis", sans-serif;
-	font-weight: 700;
-
+	font-family: $font-titles;
+	font-weight: $bold;
 }
 
+/* Misc elements */
+a {
+	&.pulsante {
+		display: block;
+		width: 50%;
+		padding: 10px 15px;
+		margin: 0 auto;
+		border-radius: $border-radius-default;
+		color: white;
+		font-weight: $bold;
+		background-color: $darkgrey;
+	}
+}
+
+.circle {
+	@include circle(120px);
+	background-color: $verdeClientoteca;
+	color: white;
+	font-size: $body-text*2.5;
+	font-weight: bold;
+}
+
+label {
+	width: 100%;
+}
+
+select {
+	width: 100%;
+	padding: 5px;
+	font-size: $body-text;
+}
 
 /*-------------------------------------------------*\
 	#HEADER
@@ -38,9 +95,9 @@ header {
 
 	}
 
-	nav {
-		overflow: hidden;
-	}
+	// nav {
+	// 	overflow: hidden;
+	// }
 	
 	ul {
 		list-style-type: none;
@@ -54,7 +111,7 @@ header {
 			
 			a {
 				display: block;
-				padding: 57px 20px;
+				padding: 80px 20px;
 				color: #6B5F51;
 				font-size: 1em;
 				font-weight: bold;
@@ -86,75 +143,100 @@ header {
 main {
 	padding-bottom: 30px;
 
+	h1 {
+
+		&.titolo {
+			text-align: center;
+			margin-bottom: $section-margin;
+		}
+	}
+
+	#map {
+		border-top: 2px rgba($verdeClientoteca,0.3) solid;
+		border-bottom: 2px rgba($verdeClientoteca,0.3) solid;
+	}
+
 	.slider {
 		height: 350px;
-	}
-	
-	.slider .motto {
-		position: relative;
-		top: 10%;
 
-		h1 {
-			font-size: 5em;
-			color: $verdeClientoteca;
+		.motto {
+			position: relative;
+			top: 10%;
+
+			h1 {
+				font-size: 4em;
+				color: $verdeClientoteca;
+			}
+
+			p {
+				font-size: 2em;
+				font-weight: 700;
+				color: white;
+			}
 		}
 
-		p {
-			font-size: 2em;
-			font-weight: 700;
-			color: white;
+		&.home{
+			background: 
+		              linear-gradient(
+		                     rgba(0, 0,0, 0.60), 
+		                     rgba(0, 0, 0, 0.60)
+		              ),
+		              url(../img/slideHome.jpg);
+		       -webkit-background-size: 100%;
+		       background-repeat: no-repeat;
+
+		       a {
+		       	display: block;
+		       	text-align: center;
+		       	width: 50%;
+		       	border-radius: $border-radius-default;
+		       	border: 5px $verdeClientoteca solid;
+
+		       	&.callToAction {
+		       		background-color: $verdeClientoteca;
+		       		padding: 15px 20px;
+		       		margin-top: $section-margin;
+					
+					color: white;
+					font-size: $body-text + 10;
+					font-weight: $bold;
+		       	}
+
+		       	&:hover {
+		       		text-decoration: none;
+		       		background-color: white;
+		       		border: 5px $verdeClientoteca solid;
+		       		color: $verdeClientoteca;
+		       	}
+		       }
+		}
+	}
+
+	.services {
+		text-align: left;
+		margin-top: $section-margin;
+
+		.fa{
+			color:$verdeClientoteca;
+			font-size: 10em;
+		}
+
+		.head {
+			text-align: center;
+		}
+
+		.service > section {
+			text-align: center;
+			border: 1px rgba(#6A5F51,0.5) solid;
+			padding: $section-padding $section-padding*2;
+			border-radius: $border-radius-default;
+
+			p {
+				text-align: justify;
+			}
 		}
 	}
 }
-
-
-
-
-.slider .motto h1, .slider p {
-	color: white;
-}
-
-.slider .motto h1 {
-	font-size: 5em;
-	color: $verdeClientoteca;
-}
-
-.slider .motto p {
-	font-size: 2em;
-	font-weight: 700;
-}
-
-.slider.home{
-	background: 
-              linear-gradient(
-                     rgba(0, 0,0, 0.60), 
-                     rgba(0, 0, 0, 0.60)
-              ),
-              url(../img/slideHome.jpg);
-       -webkit-background-size: 100%;
-       background-repeat: no-repeat;
-}
-
-.slider.map {
-
-}
-
-.services {
-	text-align: left;
-}
-
-.services .fa{
-	color:$verdeClientoteca;
-	font-size: 10em;
-}
-
-.services .head {
-	text-align: center;
-}
-
-
-
-
 
 /*-------------------------------------------------*\
 	#FOOTER
@@ -162,25 +244,20 @@ main {
 
 footer {
 	text-align: center;
-	background-color: darkgrey;
-	margin-top: 20px;
+	background-color: $darkgrey;
 	padding: 30px 0;
+	
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		&.vertical li {
+			display: inline-block;
+			padding: 0px 15px;
+		}
+	}
 }
-
-footer ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-footer ul.vertical li {
-	display: inline-block;
-	padding: 0px 15px;
-}
-
-
-
-
 
 /*-------------------------------------------------*\
 	#MEDIA QUERIES
@@ -189,76 +266,125 @@ footer ul.vertical li {
 @media screen and (max-width: 360px) {
 	
 	/* Header */
-	header #logo h2 {
-		text-align: center;
-		margin-left: 0;
-	}
+	header {
 
-	header #logo img {
-		width: 100%;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}	
+		#logo {
 
-	header ul {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
+			h2 {
+				text-align: center;
+				margin-left: 0;
+				font-size: $body-text + 5;
+			}
 
-	header ul li {
-		width: 100%;
-	}
-
-	header ul li a {
-		padding: 10px 0;
+			img {
+				width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			
+		}
 	}
 
 	/* Main */
-	.slider {
-		height: 200px;
-		background-size: 100% auto;
-		background-position: center top;
-	}
+	main {
 
-	.slider .motto {
-		top: -3%;
-	}
+		.slider {
+			height: auto;
+			background-size: 100% auto;
+			background-position: center top;
 
-	.slider .motto h1 {
-		font-size: 3em;
-	}
+			.motto {
+				top: -3%;
 
-	.slider .motto p {
-		font-size: 1.5em;
+				h1 {
+					font-size: 3em;
+				}
+
+				p {
+					font-size: 1.5em;
+				}
+			}
+
+			&.home {
+		
+				a {
+
+					&.callToAction {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 
 	/* Footer */
-	footer h3 {
-		margin-top: 45px;
+	footer {
+		
+		h3 {
+			margin-top: 45px;
+		}
 	}
 }
 
 /* Tablets and small devices < 768px */ 
-@media screen and (min-width: 361px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
 	/* Header */
 	header {
 		margin-bottom: 0;
-	}
+		
+		#logo {
+			
+			h2 {
+				
+			}
 
-	header #logo h2 {
-		text-align: left;
-	}
+			img {
+				
+			}
+		}
 
-	header #logo img {
-		width: 40%;
-	}
+		ul {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			
+			li {
+				width: 100%;
 
+				a {
+					padding: 10px 0;
+				}
+			}
+		}
+	}
+	
 	/* Main */
 
 	main {
 		padding: 0;
+
+		.slider {
+
+			&.home {
+				
+				a {
+
+					&.callToAction {
+						display: none;
+					}
+				}
+			}	
+		}
+
+		.services {
+
+			.service {
+
+				&> section {
+					margin-bottom: $section-margin;
+				}
+			}
+		}
 	}
 }

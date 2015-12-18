@@ -1,16 +1,52 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Dosis:400,700);
-/* Variables */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,700);
+/* Colors */
+/* Fonts */
+/* Margins and paddings and whatever */
+/* Mixins */
 /*-------------------------------------------------*\
 	#GENERAL
 \*-------------------------------------------------*/
 /* Typography */
 p, span, a, li {
-  font-family: "Lato", sans-serif;
-  font-size: 1.3em; }
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Dosis", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700; }
+
+/* Misc elements */
+a.pulsante {
+  display: block;
+  width: 50%;
+  padding: 10px 15px;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  background-color: darkgrey; }
+
+.circle {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  background-color: #6CBD45;
+  color: white;
+  font-size: 40px;
+  font-weight: bold; }
+
+label {
+  width: 100%; }
+
+select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px; }
 
 /*-------------------------------------------------*\
 	#HEADER
@@ -20,8 +56,6 @@ header #logo h2 {
   margin-left: 15px; }
 header #logo img {
   width: 85%; }
-header nav {
-  overflow: hidden; }
 header ul {
   list-style-type: none;
   float: right;
@@ -32,7 +66,7 @@ header ul {
     float: left; }
     header ul li a {
       display: block;
-      padding: 57px 20px;
+      padding: 80px 20px;
       color: #6B5F51;
       font-size: 1em;
       font-weight: bold;
@@ -53,44 +87,61 @@ header .active {
 \*-------------------------------------------------*/
 main {
   padding-bottom: 30px; }
+  main h1.titolo {
+    text-align: center;
+    margin-bottom: 30px; }
+  main #map {
+    border-top: 2px rgba(108, 189, 69, 0.3) solid;
+    border-bottom: 2px rgba(108, 189, 69, 0.3) solid; }
   main .slider {
     height: 350px; }
-  main .slider .motto {
-    position: relative;
-    top: 10%; }
-    main .slider .motto h1 {
-      font-size: 5em;
-      color: #6CBD45; }
-    main .slider .motto p {
-      font-size: 2em;
-      font-weight: 700;
-      color: white; }
-
-.slider .motto h1, .slider p {
-  color: white; }
-
-.slider .motto h1 {
-  font-size: 5em;
-  color: #6CBD45; }
-
-.slider .motto p {
-  font-size: 2em;
-  font-weight: 700; }
-
-.slider.home {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/slideHome.jpg);
-  -webkit-background-size: 100%;
-  background-repeat: no-repeat; }
-
-.services {
-  text-align: left; }
-
-.services .fa {
-  color: #6CBD45;
-  font-size: 10em; }
-
-.services .head {
-  text-align: center; }
+    main .slider .motto {
+      position: relative;
+      top: 10%; }
+      main .slider .motto h1 {
+        font-size: 4em;
+        color: #6CBD45; }
+      main .slider .motto p {
+        font-size: 2em;
+        font-weight: 700;
+        color: white; }
+    main .slider.home {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/slideHome.jpg);
+      -webkit-background-size: 100%;
+      background-repeat: no-repeat; }
+      main .slider.home a {
+        display: block;
+        text-align: center;
+        width: 50%;
+        border-radius: 5px;
+        border: 5px #6CBD45 solid; }
+        main .slider.home a.callToAction {
+          background-color: #6CBD45;
+          padding: 15px 20px;
+          margin-top: 30px;
+          color: white;
+          font-size: 26px;
+          font-weight: 700; }
+        main .slider.home a:hover {
+          text-decoration: none;
+          background-color: white;
+          border: 5px #6CBD45 solid;
+          color: #6CBD45; }
+  main .services {
+    text-align: left;
+    margin-top: 30px; }
+    main .services .fa {
+      color: #6CBD45;
+      font-size: 10em; }
+    main .services .head {
+      text-align: center; }
+    main .services .service > section {
+      text-align: center;
+      border: 1px rgba(106, 95, 81, 0.5) solid;
+      padding: 20px 40px;
+      border-radius: 5px; }
+      main .services .service > section p {
+        text-align: justify; }
 
 /*-------------------------------------------------*\
 	#FOOTER
@@ -98,17 +149,14 @@ main {
 footer {
   text-align: center;
   background-color: darkgrey;
-  margin-top: 20px;
   padding: 30px 0; }
-
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-
-footer ul.vertical li {
-  display: inline-block;
-  padding: 0px 15px; }
+  footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    footer ul.vertical li {
+      display: inline-block;
+      padding: 0px 15px; }
 
 /*-------------------------------------------------*\
 	#MEDIA QUERIES
@@ -118,57 +166,50 @@ footer ul.vertical li {
   /* Header */
   header #logo h2 {
     text-align: center;
-    margin-left: 0; }
-
+    margin-left: 0;
+    font-size: 21px; }
   header #logo img {
     width: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto; }
-
-  header ul {
-    width: 100%;
-    margin: 0;
-    padding: 0; }
-
-  header ul li {
-    width: 100%; }
-
-  header ul li a {
-    padding: 10px 0; }
+    margin: 0 auto; }
 
   /* Main */
-  .slider {
-    height: 200px;
+  main .slider {
+    height: auto;
     background-size: 100% auto;
     background-position: center top; }
-
-  .slider .motto {
-    top: -3%; }
-
-  .slider .motto h1 {
-    font-size: 3em; }
-
-  .slider .motto p {
-    font-size: 1.5em; }
+    main .slider .motto {
+      top: -3%; }
+      main .slider .motto h1 {
+        font-size: 3em; }
+      main .slider .motto p {
+        font-size: 1.5em; }
+    main .slider.home a.callToAction {
+      display: none; }
 
   /* Footer */
   footer h3 {
     margin-top: 45px; } }
 /* Tablets and small devices < 768px */
-@media screen and (min-width: 361px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   /* Header */
   header {
     margin-bottom: 0; }
-
-  header #logo h2 {
-    text-align: left; }
-
-  header #logo img {
-    width: 40%; }
+    header ul {
+      width: 100%;
+      margin: 0;
+      padding: 0; }
+      header ul li {
+        width: 100%; }
+        header ul li a {
+          padding: 10px 0; }
 
   /* Main */
   main {
-    padding: 0; } }
+    padding: 0; }
+    main .slider.home a.callToAction {
+      display: none; }
+    main .services .service > section {
+      margin-bottom: 30px; } }
 
 /*# sourceMappingURL=stile.css.map */
