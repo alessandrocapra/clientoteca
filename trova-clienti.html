@@ -21,8 +21,8 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="chi-siamo.html">Chi siamo</a></li>
-					<li><a href="#" class="active">Servizi</a></li>
-					<li><a href="#">Area Interesse</a></li>
+					<li><a href="servizi.html">Servizi</a></li>
+					<li><a href="trova-clienti.html" class="active">Area Interesse</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -61,36 +61,39 @@
 					<p>Ricevi i dati direttamente nella tua casella email!</p>
 				</div>
 			</section>
-			<section class="row services">
+			<section class="row tabella">
 				<h1 class="titolo">Trova nuovi potenziali clienti!</h1>
-				<form action="">
-					<section class="col-sm-4">
-						<div class="col-sm-6">
-							<label>
-								<h3>Settore</h3>
-								<select name="" id="">
-									<option value="primo">primo</option>
-									<option value="secondo">secondo</option>
-									<option value="terzo">terzo</option>
-									<option value="quarto">quarto</option>
-								</select>
-							</label>
-						</div>
-						<div class="col-sm-6">
-							<label>
-								<h3>Microsettore</h3>
-								<select name="" id="">
-									<option value="primo">primo</option>
-									<option value="secondo">secondo</option>
-									<option value="terzo">terzo</option>
-									<option value="quarto">quarto</option>
-								</select>
-							</label>
-						</div>
-					</section>
-
-					<section class="col-sm-4">
-						<div class="col-sm-6">
+				<div class="col-sm-3 col-sm-offset-1">
+					<div class="row">
+						<form action="">
+							<div class="col-sm-12">
+								<h2>Tipo di attività</h2>
+								<label>
+									<h3>Settore</h3>
+									<select name="" id="">
+										<option value="primo">primo</option>
+										<option value="secondo">secondo</option>
+										<option value="terzo">terzo</option>
+										<option value="quarto">quarto</option>
+									</select>
+								</label>
+							</div>
+							<div class="col-sm-12">
+								<label>
+									<h3>Microsettore</h3>
+									<select name="" id="">
+										<option value="primo">primo</option>
+										<option value="secondo">secondo</option>
+										<option value="terzo">terzo</option>
+										<option value="quarto">quarto</option>
+									</select>
+								</label>
+							</div>
+						</form>	
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h2>Geolocalizzazione</h2>
 							<label>
 								<h3>Regione</h3>
 								<select name="" id="">
@@ -101,7 +104,7 @@
 								</select>
 							</label>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-12">
 							<label>
 								<h3>Comune</h3>
 								<select name="" id="">
@@ -112,8 +115,26 @@
 								</select>
 							</label>
 						</div>
-					</section>
-				</form>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<input type="submit" value="Cerca clienti!">
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<section class="risultati">
+						<h1 class="titolo">Risultati</h1>
+						<div class="col-sm-4 col-sm-offset-2">
+							<h2>300</h2>
+							<p>potenziali clienti</p>
+						</div>
+						<div class="col-sm-4">
+							<h2>320</h2>
+							<p>mail di contatto</p>
+						</div>
+					</section>		
+				</div>
 			</section>
 		</article>
 	</main>
