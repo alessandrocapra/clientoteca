@@ -1,35 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,700);
-/*Shapes test, delete!*/
-.shape {
-  margin: 50px 0;
-  position: relative;
-  display: block;
-  color: red;
-  width: 0px;
-  height: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid red;
-  border-left: 100px solid transparent;
-  -moz-transform: rotate(35deg);
-  -webkit-transform: rotate(35deg);
-  -ms-transform: rotate(35deg);
-  -o-transform: rotate(35deg); }
-
-.shape:before {
-  border-bottom: 70px solid red;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  position: absolute;
-  height: 0;
-  width: 0;
-  content: "";
-  -moz-transform: rotate(-35deg);
-  -webkit-transform: rotate(-35deg);
-  -ms-transform: rotate(-35deg);
-  -o-transform: rotate(-35deg);
-  top: -45px; }
-
-/*============*/
 /* Colors */
 /* Fonts */
 /* Margins and paddings and whatever */
@@ -57,6 +26,16 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   font-weight: 700;
   background-color: darkgrey; }
+
+a.link {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 3px solid #9eef77;
+  box-shadow: 0px -5px 0px #9eef77 inset; }
+  a.link:hover, a.link:active {
+    text-decoration: none;
+    color: inherit;
+    background: #9eef77 none repeat scroll 0% 0%; }
 
 .circle {
   width: 120px;
@@ -124,10 +103,10 @@ header ul {
       text-align: center;
       text-transform: uppercase;
       text-decoration: none; }
-      header ul li a:hover {
+      header ul li a:hover, header ul li a.link:active {
         text-decoration: none;
         color: white; }
-      header ul li a:hover:not(.active) {
+      header ul li a:hover:not(.active), header ul li a.link:not(.active):active {
         color: #6CBD45; }
 header .active {
   background-color: #4CAF50;
@@ -171,7 +150,7 @@ main .slider {
         color: white;
         font-size: 26px;
         font-weight: 700; }
-      main .slider.home a:hover {
+      main .slider.home a:hover, main .slider.home a.link:active {
         text-decoration: none;
         background-color: white;
         border: 5px #6CBD45 solid;
@@ -213,7 +192,10 @@ footer {
     padding: 0; }
     footer ul.vertical li {
       display: inline-block;
-      padding: 0px 15px; }
+      padding-top: 0;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 0; }
 
 /*-------------------------------------------------*\
 	#MEDIA QUERIES
