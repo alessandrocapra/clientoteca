@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,700);
 
 /* Colors */
-$verdeClientoteca : #6CBD45;
+$verdeClientoteca : #8EB410;
 $verdeLink : $verdeClientoteca + 50;
 $grigioClientoteca : #6A5F51;
 $darkgrey: darkgrey;
+$visitedLink : #ff4dfe;
 
 /* Fonts */
 $regular : 400;
@@ -68,7 +69,7 @@ a {
 		&:hover {
 			text-decoration: none;
 			color:inherit;
-			background: $verdeLink none repeat scroll 0% 0%;
+			background: $verdeLink none repeat scroll 0 0;
 		}
 
 		&:active {
@@ -147,7 +148,7 @@ header {
 
 			a {
 				display: block;
-				padding: 80px 20px;
+				padding: 60px 20px;
 				color: #6B5F51;
 				font-size: 1em;
 				font-weight: bold;
@@ -167,7 +168,7 @@ header {
 		}
 	}
 	.active {
-		background-color: #4CAF50;
+		background-color: $verdeClientoteca;
 		color: white;
 	}
 }
@@ -189,6 +190,7 @@ main {
 	#map {
 		border-top: 2px rgba($verdeClientoteca,0.3) solid;
 		border-bottom: 2px rgba($verdeClientoteca,0.3) solid;
+		height: 350px;
 	}
 
 	.slider {
@@ -273,6 +275,10 @@ main {
 
 		.head {
 			text-align: center;
+
+			img {
+				height: 150px;
+			}
 		}
 
 		.service > section {
@@ -425,12 +431,15 @@ footer {
 			&.home {
 
 				a {
-
 					&.callToAction {
 						display: none;
 					}
 				}
 			}
+		}
+
+		#map {
+			height: 200px;
 		}
 
 		.services {
