@@ -59,6 +59,10 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: $darkgrey;
 }
 
+img.icon {
+	height:300px;
+}
+
 a {
 	&.link{
 		text-decoration: none;
@@ -264,9 +268,10 @@ main {
 	}
 
 	.services {
-		text-align: center;
-		margin-top: $section-margin;
 
+		section {
+			text-align: center;
+		}
 
 		.fa{
 			color:$verdeClientoteca;
@@ -275,20 +280,28 @@ main {
 
 		.head {
 			text-align: center;
+		}
 
-			img {
-				height: 150px;
+		.service {
+			padding-top: $section-padding;
+			margin-top: $section-margin;
+
+			&:not(:first-child) {
+				border-top: 3px dashed rgba($grigioClientoteca,0.3);
 			}
 		}
 
-		.service > section {
-			text-align: center;
-			border: 1px rgba(#6A5F51,0.5) solid;
-			padding: $section-padding $section-padding*2;
-			border-radius: $border-radius-default;
+		section.riquadro {
 
-			p {
-				text-align: justify;
+			section {
+				text-align: center;
+				border: 1px rgba(#6A5F51,0.5) solid;
+				padding: $section-padding $section-padding;
+				border-radius: $border-radius-default;
+
+				p {
+					text-align: justify;
+				}
 			}
 		}
 	}
