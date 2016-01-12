@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="96c6b246-eb69-4530-a3a4-a0e8894fa2d0" name="clientoteca" url="http://clientoteca.com">
+        <fileTransfer host="clientoteca.com" port="21" password="dfeedfc0dfc5dffcdfe6dfccdfcbdfdf" username="loilvu84">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
