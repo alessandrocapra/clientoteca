@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/stile.css">
+	<script>
+      	function initMap() {
+
+      		var myLatLang = { lat: 45.910842, lng: 10.872215 }
+
+			var map = new google.maps.Map(document.getElementById('map'), {
+          		center: myLatLang,
+          		zoom: 12,
+          		scrollwheel: false,
+          		mapTypeId: google.maps.MapTypeId.HYBRID
+        	});
+
+			var marker = new google.maps.Marker({
+				position: myLatLang,
+				map: map,
+				title: 'Clientoteca Srl'
+			});
+
+		}
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+	<header class="container-fluid">
+		<div class="row">
+			<div id="logo" class="col-sm-4">
+				<img src="img/logo.png" alt="Clientoteca">
+				<h2>Per chi ha voglia di fare!</h2>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
+					<li><a href="servizi.html">Servizi</a></li>
+					<li><a href="trova-clienti.html">Area Interesse</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+
+	<main>
+		<section id="map" class="container-fluid slider">
+			<!-- <div class="motto col-xs-12 col-sm-6">
+				<h1>Trova nuovi clienti!</h1>
+				<p>Un metodo testato, pratico e veloce per trovare nuovi clienti.</p>
+			</div> -->
+		</section>
+		<article class="container">
+			<div class="row">
+				<h1 class="titolo">Chi è Clientoteca?</h1>
+				<section class="row wow bounceInUp">
+					<section class="col-sm-6 col-md-6">
+						<header class="head">
+							<div class="fa fa-rocket"></div>
+							<h3>Descrittiva 1</h3>
+						</header>
+						<p>Clientoteca non nasce da consulenti ma da imprenditori che hanno creato questo metodo per aziende reali di beni materiali.</p>
+					</section>
+					<section class="col-sm-6 col-md-6">
+						<header class="head">
+							<div class="fa fa-dashboard"></div>
+							<h3>Descrittiva 2</h3>
+						</header>
+						<p>L’azienda nasce dall’esigenza di farsi conoscere sul mercato, comprendere se i servizi e i prodotti offerti fossero effettivamente richiesti dal mercato e trovare nuovi clienti.</p>
+					</section>
+				</section>
+			</div>
+		</article>
+	</main>
+
+
+	<footer class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3>Lista di qualcosa</h3>
+				<ul>
+					<li>Primo</li>
+					<li>Secondo</li>
+					<li>Terzo</li>
+					<li>Quarto</li>
+				</ul>
+			</div>
+			<div class="col-sm-4">
+				<h3>Clientoteca srl</h3>
+				<p>Via S. Caterina 64 - Arco (TN)</p>
+				<ul class="vertical">
+					<li><i class="fa fa-facebook-f fa-2x"></i></li>
+					<li><i class="fa fa-twitter fa-2x"></i></li>
+					<li><i class="fa fa-linkedin fa-2x"></i></li>
+				</ul>
+			</div>
+			<div class="col-sm-4">
+				<h3>Cosa mettiamo qui?</h3>
+				<p>Potrebbe esserci qualche link a qualche contenuto del sito, altrimenti ci piazzo la cookie e privacy policy.</p>
+			</div>
+		</div>
+	</footer>
+	
+	<!-- SCRIPTS -->
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="js/wow.min.js"></script>
+	<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbRgaGeQHz00zeL4NexIxpuJrxZjiU9To&signed_in=true&callback=initMap">
+	</script>
+	<script>
+		new WOW().init();
+	</script>
+</body>
+</html>
