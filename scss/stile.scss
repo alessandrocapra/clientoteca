@@ -131,7 +131,7 @@ header {
 		}
 
 		img {
-			width: 85%;
+			width: 390px;
 		}
 
 	}
@@ -152,7 +152,7 @@ header {
 
 			a {
 				display: block;
-				padding: 60px 20px;
+				padding: 63px 20px;
 				color: #6B5F51;
 				font-size: 1em;
 				font-weight: bold;
@@ -223,7 +223,7 @@ main {
 															rgba(0, 0, 0, 0.60)
 							),
 							url(../img/slideHome.jpg);
-			-webkit-background-size: 100%;
+			background-size: cover;
 			background-repeat: no-repeat;
 
 			a {
@@ -315,7 +315,7 @@ footer {
 	text-align: center;
 	color: white;
 	// background-color: $darkgrey;
-	background-image: url("/img/black_pattern.png");
+	background-image: url("../img/black_pattern.png");
 	padding: $section-padding 0;
 	// margin-top: $section-margin;
 

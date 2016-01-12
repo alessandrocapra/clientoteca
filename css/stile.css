@@ -88,7 +88,7 @@ header #logo h2 {
   margin-top: 0;
   margin-left: 15px; }
 header #logo img {
-  width: 85%; }
+  width: 390px; }
 header ul {
   list-style-type: none;
   float: right;
@@ -99,7 +99,7 @@ header ul {
     float: left; }
     header ul li a {
       display: block;
-      padding: 60px 20px;
+      padding: 63px 20px;
       color: #6B5F51;
       font-size: 1em;
       font-weight: bold;
@@ -139,7 +139,7 @@ main .slider {
       color: white; }
   main .slider.home {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/slideHome.jpg);
-    -webkit-background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat; }
     main .slider.home a {
       display: block;
@@ -192,7 +192,7 @@ main .services section.riquadro section {
 footer {
   text-align: center;
   color: white;
-  background-image: url("/img/black_pattern.png");
+  background-image: url("../img/black_pattern.png");
   padding: 20px 0; }
   footer ul {
     list-style-type: none;
