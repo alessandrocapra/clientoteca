@@ -40,6 +40,49 @@
 			<h1 class="titolo">Come funziona Clientoteca</h1>
 			<section class="row services">
 
+				<div class="col-sm-12">
+					<?php
+					$servername = "192.168.56.101";
+					$username = "clientoteca";
+					$password = "clientoteca";
+					$dbname = "clientoteca";
+
+					// Create connection
+					$conn = new mysqli($servername, $username, $password, $dbname);
+
+					// Check connection
+					if ($conn->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+					}
+
+					// Insert data
+//					$sql = "INSERT INTO prova (id, name)
+//VALUES (NULL, 'John')";
+//
+//					if ($conn->query($sql) === TRUE) {
+//						echo "New record created successfully";
+//					} else {
+//						echo "Error: " . $sql . "<br>" . $conn->error;
+//					}
+
+					// Retrieve data
+					$sql = "SELECT * FROM prova";
+					$result = $conn->query($sql);
+
+					if ($result->num_rows > 0) {
+						// output data of each row
+						while($row = $result->fetch_assoc()) {
+							echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+						}
+					} else {
+						echo "0 results";
+					}
+
+					$conn->close();
+
+					?>
+				</div>
+
 				<div class="col-sm-2 col-sm-offset-1">
 					<div class="circle">1</div>
 					<p>Seleziona il settore in cui operi</p>

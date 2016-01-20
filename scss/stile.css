@@ -7,14 +7,11 @@
 /*-------------------------------------------------*\
 	#GENERAL
 \*-------------------------------------------------*/
-body {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.6rem; }
-
 /* Typography */
 p, span, a, li {
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
-  line-height: 1.5; }
+  font-size: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
@@ -50,11 +47,11 @@ a.link {
   line-height: 120px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin-bottom: 30px;
   border-radius: 50%;
   background-color: #8EB410;
   color: white;
-  font-size: 4rem;
+  font-size: 40px;
   font-weight: bold; }
   .circle.gray {
     width: 80px;
@@ -62,7 +59,7 @@ a.link {
     line-height: 80px;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: 30px;
     border-radius: 50%;
     background-color: darkgrey; }
 
@@ -72,21 +69,21 @@ label {
 select {
   width: 100%;
   padding: 5px;
-  font-size: 1.6rem; }
+  font-size: 16px; }
 
 input[type=submit] {
   border: none;
   border-radius: 5px;
   width: 100%;
-  margin-top: 1em;
-  padding: 2em;
+  margin-top: 30px;
+  padding: 20px;
   background-color: #8EB410;
   color: white;
   font-weight: 700;
-  font-size: 3.2rem; }
+  font-size: 32px; }
 
 /*-------------------------------------------------*\
-    #HEADER
+	#HEADER
 \*-------------------------------------------------*/
 header #logo h2 {
   margin-top: 0;
@@ -120,11 +117,11 @@ header .active {
   color: white; }
 
 /*-------------------------------------------------*\
-    #MAIN
+	#MAIN
 \*-------------------------------------------------*/
 main h1.titolo {
   text-align: center;
-  margin-bottom: 1em; }
+  margin-bottom: 30px; }
 main #map {
   border-top: 2px rgba(142, 180, 16, 0.3) solid;
   border-bottom: 2px rgba(142, 180, 16, 0.3) solid;
@@ -154,9 +151,9 @@ main .slider {
       main .slider.home a.callToAction {
         background-color: #8EB410;
         padding: 15px 20px;
-        margin-top: 1em;
+        margin-top: 30px;
         color: white;
-        font-size: 3.6rem;
+        font-size: 26px;
         font-weight: 700; }
       main .slider.home a:hover, main .slider.home a.link:active {
         text-decoration: none;
@@ -178,26 +175,26 @@ main .services .fa {
 main .services .head {
   text-align: center; }
 main .services .service {
-  padding-top: 2em;
-  margin-top: 1em; }
+  padding-top: 20px;
+  margin-top: 30px; }
   main .services .service:not(:first-child) {
     border-top: 3px dashed rgba(106, 95, 81, 0.3); }
 main .services section.riquadro section {
   text-align: center;
   border: 1px rgba(106, 95, 81, 0.5) solid;
-  padding: 2em 2em;
+  padding: 20px 20px;
   border-radius: 5px; }
   main .services section.riquadro section p {
     text-align: justify; }
 
 /*-------------------------------------------------*\
-    #FOOTER
+	#FOOTER
 \*-------------------------------------------------*/
 footer {
   text-align: center;
   color: white;
   background-image: url("../img/black_pattern.png");
-  padding: 2em 0; }
+  padding: 20px 0; }
   footer ul {
     list-style-type: none;
     margin: 0;
@@ -210,7 +207,7 @@ footer {
       padding-bottom: 0; }
 
 /*-------------------------------------------------*\
-    #MEDIA QUERIES
+	#MEDIA QUERIES
 \*-------------------------------------------------*/
 /* Smartphones */
 @media screen and (max-width: 360px) {
@@ -218,7 +215,7 @@ footer {
   header #logo h2 {
     text-align: center;
     margin-left: 0;
-    font-size: 6.6rem; }
+    font-size: 21px; }
   header #logo img {
     width: 100%;
     display: block;
@@ -263,7 +260,7 @@ footer {
     main #map {
       height: 200px; }
     main .services .service > section {
-      margin-bottom: 1em; }
+      margin-bottom: 30px; }
 
   footer {
     margin-top: 0; } }

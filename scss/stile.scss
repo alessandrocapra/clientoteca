@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,700);
 
+/* Variables */
+$breakpoint-phone: 360px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+
 /* Colors */
 $verdeClientoteca : #8EB410;
 $verdeLink : $verdeClientoteca + 50;
@@ -10,13 +16,13 @@ $visitedLink : #ff4dfe;
 /* Fonts */
 $regular : 400;
 $bold : 700;
-$body-text : 16px;
+$body-text : 1.6rem;
 $font-body : "Raleway", sans-serif;
 $font-titles: "Montserrat", sans-serif;
 
 /* Margins and paddings and whatever */
-$section-margin: 30px;
-$section-padding: 20px;
+$section-margin: 1em;
+$section-padding: 2em;
 $border-radius-default: 5px;
 
 /* Mixins */
@@ -34,439 +40,444 @@ $border-radius-default: 5px;
 	#GENERAL
 \*-------------------------------------------------*/
 
+body {
+	font-family: $font-body;
+	font-size: $body-text;
+
+}
+
 /* Typography */
 
 p, span, a, li {
-	font-family: $font-body;
-	font-weight: $regular;
-	font-size: $body-text;
+  font-weight: $regular;
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-titles;
-	font-weight: $bold;
+    font-family: $font-titles;
+    font-weight: $bold;
 }
 
 /* Misc elements */
 .pulsante {
-	display: block;
-	width: 50%;
-	padding: 10px 15px;
-	margin: 0 auto;
-	border-radius: $border-radius-default;
-	color: white;
-	font-weight: $bold;
-	background-color: $darkgrey;
+    display: block;
+    width: 50%;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border-radius: $border-radius-default;
+    color: white;
+    font-weight: $bold;
+    background-color: $darkgrey;
 }
 
 img.icon {
-	height:300px;
+    height:300px;
 }
 
 a {
-	&.link{
-		text-decoration: none;
-		color: inherit;
-		border-bottom: 3px solid $verdeLink;
-		box-shadow: 0px -5px 0px $verdeLink inset;
+    &.link{
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 3px solid $verdeLink;
+        box-shadow: 0px -5px 0px $verdeLink inset;
 
-		&:hover {
-			text-decoration: none;
-			color:inherit;
-			background: $verdeLink none repeat scroll 0 0;
-		}
+        &:hover {
+            text-decoration: none;
+            color:inherit;
+            background: $verdeLink none repeat scroll 0 0;
+        }
 
-		&:active {
-			@extend a:hover;
-		}
-	}
+        &:active {
+            @extend a:hover;
+        }
+    }
 }
 
 .circle {
-	@include circle(120px);
-	background-color: $verdeClientoteca;
-	color: white;
-	font-size: $body-text*2.5;
-	font-weight: bold;
+    @include circle(120px);
+    background-color: $verdeClientoteca;
+    color: white;
+    font-size: $body-text*2.5;
+    font-weight: bold;
 
-	&.gray {
-		@include circle(80px);
-		background-color: $darkgrey;
-	}
+    &.gray {
+        @include circle(80px);
+        background-color: $darkgrey;
+    }
 }
 
 label {
-	width: 100%;
+    width: 100%;
 }
 
 select {
-	width: 100%;
-	padding: 5px;
-	// border: none;
-	// border-radius: $border-radius-default;
-	font-size: $body-text;
+    width: 100%;
+    padding: 5px;
+    // border: none;
+    // border-radius: $border-radius-default;
+    font-size: $body-text;
 }
 
 input[type=submit] {
-	border: none;
-	border-radius: $border-radius-default;
-	width: 100%;
-	margin-top: $section-margin;
-	padding: $section-padding;
-	background-color: $verdeClientoteca;
-	color: white;
-	font-weight: $bold;
-	font-size: $body-text*2;
+    border: none;
+    border-radius: $border-radius-default;
+    width: 100%;
+    margin-top: $section-margin;
+    padding: $section-padding;
+    background-color: $verdeClientoteca;
+    color: white;
+    font-weight: $bold;
+    font-size: $body-text*2;
 }
 
 /*-------------------------------------------------*\
-	#HEADER
+    #HEADER
 \*-------------------------------------------------*/
 
 header {
-	#logo {
-		h2 {
-			margin-top: 0;
-			margin-left: 15px;
-		}
+    #logo {
+        h2 {
+            margin-top: 0;
+            margin-left: 15px;
+        }
 
-		img {
-			width: 390px;
-		}
+        img {
+            width: 390px;
+        }
 
-	}
+    }
 
-	// nav {
-	// 	overflow: hidden;
-	// }
+    // nav {
+    // 	overflow: hidden;
+    // }
 
-	ul {
-		list-style-type: none;
-		float: right;
-		overflow: hidden;
-		margin: 0;
-		padding: 0;
+    ul {
+        list-style-type: none;
+        float: right;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
 
-		li {
-			float: left;
+        li {
+            float: left;
 
-			a {
-				display: block;
-				padding: 63px 20px;
-				color: #6B5F51;
-				font-size: 1em;
-				font-weight: bold;
-				text-align: center;
-				text-transform: uppercase;
-				text-decoration: none;
+            a {
+                display: block;
+                padding: 63px 20px;
+                color: #6B5F51;
+                font-size: 1em;
+                font-weight: bold;
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: none;
 
-				&:hover {
-					text-decoration: none;
-					color: white;
-				}
+                &:hover {
+                    text-decoration: none;
+                    color: white;
+                }
 
-				&:hover:not(.active) {
-					color: $verdeClientoteca;
-				}
-			}
-		}
-	}
-	.active {
-		background-color: $verdeClientoteca;
-		color: white;
-	}
+                &:hover:not(.active) {
+                    color: $verdeClientoteca;
+                }
+            }
+        }
+    }
+    .active {
+        background-color: $verdeClientoteca;
+        color: white;
+    }
 }
 
 /*-------------------------------------------------*\
-	#MAIN
+    #MAIN
 \*-------------------------------------------------*/
 
 main {
 
-	h1 {
+    h1 {
 
-		&.titolo {
-			text-align: center;
-			margin-bottom: $section-margin;
-		}
-	}
+        &.titolo {
+            text-align: center;
+            margin-bottom: $section-margin;
+        }
+    }
 
-	#map {
-		border-top: 2px rgba($verdeClientoteca,0.3) solid;
-		border-bottom: 2px rgba($verdeClientoteca,0.3) solid;
-		height: 350px;
-	}
+    #map {
+        border-top: 2px rgba($verdeClientoteca,0.3) solid;
+        border-bottom: 2px rgba($verdeClientoteca,0.3) solid;
+        height: 350px;
+    }
 
-	.slider {
-		height: 350px;
+    .slider {
+        height: 350px;
 
-		.motto {
-			position: relative;
-			top: 10%;
+        .motto {
+            position: relative;
+            top: 10%;
 
-			h1 {
-				font-size: 4em;
-				color: $verdeClientoteca;
-			}
+            h1 {
+                font-size: 4em;
+                color: $verdeClientoteca;
+            }
 
-			p {
-				font-size: 2em;
-				font-weight: 700;
-				color: white;
-			}
-		}
+            p {
+                font-size: 2em;
+                font-weight: 700;
+                color: white;
+            }
+        }
 
-		&.home{
-			background:
-							linear-gradient(
-															rgba(0, 0,0, 0.60),
-															rgba(0, 0, 0, 0.60)
-							),
-							url(../img/slideHome.jpg);
-			background-size: cover;
-			background-repeat: no-repeat;
+        &.home{
+            background:
+                            linear-gradient(
+                                                            rgba(0, 0,0, 0.60),
+                                                            rgba(0, 0, 0, 0.60)
+                            ),
+                            url(../img/slideHome.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
 
-			a {
-				display: block;
-				text-align: center;
-				width: 50%;
-				border-radius: $border-radius-default;
-				border: 5px $verdeClientoteca solid;
+            a {
+                display: block;
+                text-align: center;
+                width: 50%;
+                border-radius: $border-radius-default;
+                border: 5px $verdeClientoteca solid;
 
-				&.callToAction {
-					background-color: $verdeClientoteca;
-					padding: 15px 20px;
-					margin-top: $section-margin;
+                &.callToAction {
+                    background-color: $verdeClientoteca;
+                    padding: 15px 20px;
+                    margin-top: $section-margin;
 
-					color: white;
-					font-size: $body-text + 10;
-					font-weight: $bold;
-				}
+                    color: white;
+                    font-size: $body-text + 2;
+                    font-weight: $bold;
+                }
 
-				&:hover {
-					text-decoration: none;
-					background-color: white;
-					border: 5px $verdeClientoteca solid;
-					color: $verdeClientoteca;
-				}
-			}
-		}
-	}
+                &:hover {
+                    text-decoration: none;
+                    background-color: white;
+                    border: 5px $verdeClientoteca solid;
+                    color: $verdeClientoteca;
+                }
+            }
+        }
+    }
 
-	.tabella {
-		background-color: $verdeClientoteca+50;
-		padding-bottom: 20px;
+    .tabella {
+        background-color: $verdeClientoteca+50;
+        padding-bottom: 20px;
 
-	}
+    }
 
-	.risultati {
-		text-align: center;
+    .risultati {
+        text-align: center;
 
-		h2 {
-			font-size: 5em;
-		}
-	}
+        h2 {
+            font-size: 5em;
+        }
+    }
 
-	.services {
+    .services {
 
-		section {
-			text-align: center;
-		}
+        section {
+            text-align: center;
+        }
 
-		.fa{
-			color:$verdeClientoteca;
-			font-size: 10em;
-		}
+        .fa{
+            color:$verdeClientoteca;
+            font-size: 10em;
+        }
 
-		.head {
-			text-align: center;
-		}
+        .head {
+            text-align: center;
+        }
 
-		.service {
-			padding-top: $section-padding;
-			margin-top: $section-margin;
+        .service {
+            padding-top: $section-padding;
+            margin-top: $section-margin;
 
-			&:not(:first-child) {
-				border-top: 3px dashed rgba($grigioClientoteca,0.3);
-			}
-		}
+            &:not(:first-child) {
+                border-top: 3px dashed rgba($grigioClientoteca,0.3);
+            }
+        }
 
-		section.riquadro {
+        section.riquadro {
 
-			section {
-				text-align: center;
-				border: 1px rgba(#6A5F51,0.5) solid;
-				padding: $section-padding $section-padding;
-				border-radius: $border-radius-default;
+            section {
+                text-align: center;
+                border: 1px rgba(#6A5F51,0.5) solid;
+                padding: $section-padding $section-padding;
+                border-radius: $border-radius-default;
 
-				p {
-					text-align: justify;
-				}
-			}
-		}
-	}
+                p {
+                    text-align: justify;
+                }
+            }
+        }
+    }
 }
 
 /*-------------------------------------------------*\
-	#FOOTER
+    #FOOTER
 \*-------------------------------------------------*/
 
 footer {
-	text-align: center;
-	color: white;
-	// background-color: $darkgrey;
-	background-image: url("../img/black_pattern.png");
-	padding: $section-padding 0;
-	// margin-top: $section-margin;
+    text-align: center;
+    color: white;
+    // background-color: $darkgrey;
+    background-image: url("../img/black_pattern.png");
+    padding: $section-padding 0;
+    // margin-top: $section-margin;
 
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
 
-		&.vertical li {
-			display: inline-block;
-			padding-top: 0;
-			padding-right: 15px;
-			padding-left: 15px;
-			padding-bottom: 0;
-		}
-	}
+        &.vertical li {
+            display: inline-block;
+            padding-top: 0;
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-bottom: 0;
+        }
+    }
 }
 
 /*-------------------------------------------------*\
-	#MEDIA QUERIES
+    #MEDIA QUERIES
 \*-------------------------------------------------*/
 /* Smartphones */
-@media screen and (max-width: 360px) {
+@media screen and (max-width: $breakpoint-phone) {
 
-	/* Header */
-	header {
+    /* Header */
+    header {
 
-		#logo {
+        #logo {
 
-			h2 {
-				text-align: center;
-				margin-left: 0;
-				font-size: $body-text + 5;
-			}
+            h2 {
+                text-align: center;
+                margin-left: 0;
+                font-size: $body-text + 5;
+            }
 
-			img {
-				width: 100%;
-				display: block;
-				margin: 0 auto;
-			}
+            img {
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
 
-		}
-	}
+        }
+    }
 
-	/* Main */
-	main {
+    /* Main */
+    main {
 
-		.slider {
-			height: auto;
-			background-size: 100% auto;
-			background-position: center top;
+        .slider {
+            height: auto;
+            background-size: 100% auto;
+            background-position: center top;
 
-			.motto {
-				top: -3%;
+            .motto {
+                top: -3%;
 
-				h1 {
-					font-size: 3em;
-				}
+                h1 {
+                    font-size: 3em;
+                }
 
-				p {
-					font-size: 1.5em;
-				}
-			}
+                p {
+                    font-size: 1.5em;
+                }
+            }
 
-			&.home {
+            &.home {
 
-				a {
+                a {
 
-					&.callToAction {
-						display: none;
-					}
-				}
-			}
-		}
-	}
+                    &.callToAction {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 
-	/* Footer */
-	footer {
+    /* Footer */
+    footer {
 
-		h3 {
-			margin-top: 45px;
-		}
-	}
+        h3 {
+            margin-top: 45px;
+        }
+    }
 }
 
 /* Tablets and small devices < 768px */
 @media screen and (max-width: 768px) {
 
-	/* Header */
-	header {
-		margin-bottom: 0;
+    /* Header */
+    header {
+        margin-bottom: 0;
 
-		#logo {
+        #logo {
 
-			h2 {
+            h2 {
 
-			}
+            }
 
-			img {
+            img {
 
-			}
-		}
+            }
+        }
 
-		ul {
-			width: 100%;
-			margin: 0;
-			padding: 0;
+        ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
 
-			li {
-				width: 100%;
+            li {
+                width: 100%;
 
-				a {
-					padding: 10px 0;
-				}
-			}
-		}
-	}
+                a {
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
 
-	/* Main */
+    /* Main */
 
-	main {
-		padding: 0;
+    main {
+        padding: 0;
 
-		.slider {
+        .slider {
 
-			&.home {
+            &.home {
 
-				a {
-					&.callToAction {
-						display: none;
-					}
-				}
-			}
-		}
+                a {
+                    &.callToAction {
+                        display: none;
+                    }
+                }
+            }
+        }
 
-		#map {
-			height: 200px;
-		}
+        #map {
+            height: 200px;
+        }
 
-		.services {
+        .services {
 
-			.service {
+            .service {
 
-				&> section {
-					margin-bottom: $section-margin;
-				}
-			}
-		}
-	}
+                &> section {
+                    margin-bottom: $section-margin;
+                }
+            }
+        }
+    }
 
-	footer {
-		margin-top: 0;
-	}
+    footer {
+        margin-top: 0;
+    }
 }
