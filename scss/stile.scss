@@ -16,13 +16,13 @@ $visitedLink : #ff4dfe;
 /* Fonts */
 $regular : 400;
 $bold : 700;
-$body-text : 1.6rem;
+$body-text : 1.6em;
 $font-body : "Raleway", sans-serif;
 $font-titles: "Montserrat", sans-serif;
 
 /* Margins and paddings and whatever */
-$section-margin: 1em;
-$section-padding: 2em;
+$section-margin: 2em;
+$section-padding: 3em;
 $border-radius-default: 5px;
 
 /* Mixins */
@@ -72,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 
 img.icon {
     height:300px;
+    width: auto;
 }
 
 a {
@@ -194,11 +195,12 @@ header {
 
 main {
 
+    background-color: darkgray;
+
     h1 {
 
         &.titolo {
-            text-align: center;
-            margin-bottom: $section-margin;
+            text-align: left;
         }
     }
 
@@ -216,12 +218,12 @@ main {
             top: 10%;
 
             h1 {
-                font-size: 4em;
-                color: $verdeClientoteca;
+                font-size: 2.5em;
+                color: #fff;
             }
 
             p {
-                font-size: 2em;
+                font-size: 1.6em;
                 font-weight: 700;
                 color: white;
             }
@@ -230,17 +232,17 @@ main {
         &.home{
             background:
                             linear-gradient(
-                                                            rgba(0, 0,0, 0.60),
-                                                            rgba(0, 0, 0, 0.60)
+                                                            rgba(0, 0,0, 0.40),
+                                                            rgba(0, 0, 0, 0.40)
                             ),
                             url(../img/slideHome.jpg);
-            background-size: cover;
+            background-size: 100%;
             background-repeat: no-repeat;
 
             a {
                 display: block;
                 text-align: center;
-                width: 50%;
+                width: 60%;
                 border-radius: $border-radius-default;
                 border: 5px $verdeClientoteca solid;
 
@@ -250,7 +252,7 @@ main {
                     margin-top: $section-margin;
 
                     color: white;
-                    font-size: $body-text + 2;
+                    font-size: 1.3em;
                     font-weight: $bold;
                 }
 
@@ -280,9 +282,7 @@ main {
 
     .services {
 
-        section {
-            text-align: center;
-        }
+        background-color: #fff;
 
         .fa{
             color:$verdeClientoteca;
@@ -294,11 +294,24 @@ main {
         }
 
         .service {
-            padding-top: $section-padding;
-            margin-top: $section-margin;
+            padding: $section-padding $section-padding 0 $section-padding;
+            margin: $section-margin auto;
+            text-align: justify;
+
+            h2 {
+                text-align: left;
+            }
 
             &:not(:first-child) {
-                border-top: 3px dashed rgba($grigioClientoteca,0.3);
+                //border-top: 3px dashed rgba($grigioClientoteca,0.3);
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            .service-img {
+                text-align: center;
             }
         }
 
@@ -328,7 +341,7 @@ footer {
     // background-color: $darkgrey;
     background-image: url("../img/black_pattern.png");
     padding: $section-padding 0;
-    // margin-top: $section-margin;
+    //margin-top: $section-margin;
 
     ul {
         list-style-type: none;
@@ -359,7 +372,7 @@ footer {
             h2 {
                 text-align: center;
                 margin-left: 0;
-                font-size: $body-text + 5;
+                font-size: $body-text;
             }
 
             img {
@@ -373,6 +386,12 @@ footer {
 
     /* Main */
     main {
+
+        img.icon {
+            text-align: center;
+            width: 100%;
+            height: auto;
+        }
 
         .slider {
             height: auto;
@@ -392,7 +411,8 @@ footer {
             }
 
             &.home {
-
+                background-size: cover;
+                background-position: center;
                 a {
 
                     &.callToAction {
