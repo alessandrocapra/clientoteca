@@ -51,6 +51,7 @@ body {
 p, span, a, li {
   font-weight: $regular;
   line-height: 1.5;
+  text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -195,7 +196,9 @@ header {
 
 main {
 
-    background-color: darkgray;
+    //background-image: url(../img/kindajean.png);
+    //background-repeat: repeat;
+    padding-bottom: $section-padding;
 
     h1 {
 
@@ -336,6 +339,11 @@ main {
 \*-------------------------------------------------*/
 
 footer {
+
+    p{
+        text-align: center;
+    }
+
     text-align: center;
     color: white;
     // background-color: $darkgrey;
@@ -407,6 +415,7 @@ footer {
 
                 p {
                     font-size: 1.5em;
+                    line-height: 1;
                 }
             }
 
@@ -472,6 +481,13 @@ footer {
 
         .slider {
 
+            .motto {
+
+                p {
+                    line-height: 1;
+                }
+            }
+
             &.home {
 
                 a {
@@ -484,6 +500,7 @@ footer {
 
         #map {
             height: 200px;
+            margin-bottom: $section-margin;
         }
 
         .services {

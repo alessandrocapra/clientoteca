@@ -36,96 +36,43 @@
 			</div>
 		</section>
 
-		<article class="container-fluid">
-			<h1 class="titolo">Come funziona Clientoteca</h1>
-			<section class="row services">
-
-				<div class="col-sm-2 col-sm-offset-1">
-					<div class="circle">1</div>
-					<p>Seleziona il settore in cui operi</p>
+		<article class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="titolo">Come funziona Clientoteca</h1>
+					<p>Vuoi sapere quanti possono essere i tuoi nuovi Clienti e in quanto tempo li puoi visitare ?</p>
+					<p>Ti basta contattarci specificando di cosa ti occupi, a quale provincia/e e settore merceologico sei interessato, oltre che quanti giorni alla settimana puoi dedicare a questa attività e te lo faremo sapere in 24 ore.</p>
 				</div>
-				<div class="col-sm-2">
-					<div class="circle">2</div>
-					<p>Affina la ricerca definendo il tuo settore operativo</p>
-				</div>
-				<div class="col-sm-2">
-					<div class="circle">3</div>
-					<p>Scegli l'area di tuo interesse</p>
-				</div>
-				<div class="col-sm-2">
-					<div class="circle">4</div>
-					<p>Inserisci i tuoi contatti per ricevere i dati richiesti</p>
-				</div>
-				<div class="col-sm-2">
-					<div class="circle">5</div>
-					<p>Ricevi i dati direttamente nella tua casella email!</p>
-				</div>
-			</section>
-			<section class="row tabella">
-				<h1 class="titolo">Trova nuovi potenziali clienti!</h1>
-				<div class="col-sm-3 col-sm-offset-1">
-					<div class="row">
-						<form action="">
-							<div class="col-sm-12">
-								<h2>Tipo di attività</h2>
-                                <h3>Settore</h3>
-                                <select name="" id="settore">
-                                    <option value="primo">primo</option>
-                                    <option value="secondo">secondo</option>
-                                    <option value="terzo">terzo</option>
-                                    <option value="quarto">quarto</option>
-                                </select>
-							</div>
-							<div class="col-sm-12">
-                                <h3>Microsettore</h3>
-                                <select name="" id="microsettore">
-                                    <option value="primo">primo</option>
-                                    <option value="secondo">secondo</option>
-                                    <option value="terzo">terzo</option>
-                                    <option value="quarto">quarto</option>
-                                </select>
-							</div>
-						</form>	
-					</div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h2>Geolocalizzazione</h2>
-                            <h3>Regione</h3>
-                            <select name="" id="regione">
-                                <option value="primo">Tutte le regioni</option>
-                                <option value="secondo">Abruzzo</option>
-                                <option value="terzo">Marche</option>
-                                <option value="quarto">Molise</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12">
-                            <h3>Comune</h3>
-                            <select name="" id="comune">
-                                <option value="primo">Tutti i comuni</option>
-                                <option value="secondo">Borgo Valsugana</option>
-                                <option value="terzo">Trento</option>
-                                <option value="quarto">Rovereto</option>
-                            </select>
-
-                            <input type="submit" value="Cerca clienti!">
-                        </div>
-
-                    </div>
-                </div>
 				<div class="col-sm-8">
-					<section class="risultati">
-						<h1 class="titolo">Risultati</h1>
-						<div class="col-sm-4 col-sm-offset-2">
-							<h2>300</h2>
-							<p>potenziali clienti</p>
+					<h1>Contattaci!</h1>
+					<form role="form" id="contactForm" data-toggle="validator" class="shake">
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<label for="name" class="h4">Nome</label>
+								<input type="text" class="form-control" id="name" placeholder="Inserisci nome" required data-error="Il nome è obbligatorio">
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="email" class="h4">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Inserisci email" required data-error="La email è obbligatoria">
+								<div class="help-block with-errors"></div>
+							</div>
 						</div>
-						<div class="col-sm-4">
-							<h2>320</h2>
-							<p>mail di contatto</p>
+						<div class="form-group">
+							<label for="message" class="h4 ">Message</label>
+							<textarea id="message" class="form-control" rows="5" placeholder="Inserisci il tuo messaggio" required data-error="Il messaggio è obbligatorio"></textarea>
+							<div class="help-block with-errors"></div>
 						</div>
-					</section>		
+						<button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Invia</button>
+						<div id="msgSubmit" class="h3 text-center hidden"></div>
+						<div class="clearfix"></div>
+					</form>
 				</div>
-			</section>
+				<div class="col-sm-4">
+					<h1>Contatto telefonico</h1>
+					<i class="fa fa-phone"></i><span>0464 518003</span>
+				</div>
+			</div>
 		</article>
 	</main>
 
@@ -161,9 +108,7 @@
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="js/wow.min.js"></script>
-       	<script>
-       		new WOW().init();
-       	</script>
+	<script src="js/validator.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>

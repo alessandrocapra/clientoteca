@@ -44,7 +44,7 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
 					<li><a href="servizi.html">Servizi</a></li>
-					<li><a href="trova-clienti.php">Area Interesse</a></li>
+					<li><a href="trova-clienti.html">Area Interesse</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -52,12 +52,56 @@
 	
 
 	<main>
-		<section id="map" class="container-fluid slider">
+		<section class="container-fluid slider home">
+			<div class="motto col-xs-12 col-sm-6">
+				<h1>Trova nuovi clienti!</h1>
+				<p>Un metodo facile, pratico e veloce per trovare nuovi clienti.</p>
+				<a href="trova-clienti.html" class="callToAction">Provalo gratis!</a>
+			</div>
 		</section>
 		<article class="container">
 			<div class="row">
-				<h1 class="titolo">Chi è Clientoteca?</h1>
-					<p>Clientoteca è un’azienda che nasce non da consulenti ma da imprenditori che hanno sviluppato questo metodo per quelle aziende che offrono beni materiali. L’azienda è stata creata per far fronte ad un’esigenza specifica delle aziende di oggi, farsi conoscere sul mercato. Il modo migliore per trovare nuovi clienti è farsi conoscere cogliendo l’occasione per comprendere se i servizi e i prodotti offerti siano effettivamente richiesti dal mercato.</p>
+				<div class="col-sm-8">
+					<h1 class="titolo">Chi è Clientoteca?</h1>
+					<p>Clientoteca è un’azienda che nasce non da consulenti ma da imprenditori che hanno sviluppato questo metodo per quelle aziende che offrono beni materiali.</p>
+					<p>L’azienda è stata creata per far fronte ad un’esigenza specifica delle aziende di oggi, farsi conoscere sul mercato. Il modo migliore per trovare nuovi clienti è farsi conoscere cogliendo l’occasione per comprendere se i servizi e i prodotti offerti siano effettivamente richiesti dal mercato.</p>
+					<!--<img src="http://placehold.it/700x400" style="width: 100%; height: auto" alt="">-->
+
+					<h1>Contattaci!</h1>
+					<form role="form" id="contactForm" data-toggle="validator" class="shake">
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<label for="name" class="h4">Nome</label>
+								<input type="text" class="form-control" id="name" placeholder="Inserisci nome" required data-error="Il nome è obbligatorio">
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="email" class="h4">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Inserisci email" required data-error="La email è obbligatoria">
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="message" class="h4 ">Message</label>
+							<textarea id="message" class="form-control" rows="5" placeholder="Inserisci il tuo messaggio" required data-error="Il messaggio è obbligatorio"></textarea>
+							<div class="help-block with-errors"></div>
+						</div>
+						<button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
+						<div id="msgSubmit" class="h3 text-center hidden"></div>
+						<div class="clearfix"></div>
+					</form>
+
+				</div> <!-- end col-sm-8 -->
+				<div class="col-sm-4">
+					<h1>Contatti</h1>
+					<i class="fa fa-phone"></i><span>Ciao</span><br>
+					<i class="fa fa-envelope"></i><span>Ciao</span>
+					<span class="fa fa-mail"></span>
+					<h1>Dove siamo</h1>
+					<p>Via S. Caterina 84, Arco (TN)</p>
+					<section id="map" class="slider">
+					</section>
+				</div>
 			</div>
 		</article>
 	</main>
@@ -93,13 +137,10 @@
 	<!-- SCRIPTS -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="js/wow.min.js"></script>
+	<script src="js/validator.js"></script>
+	<script src="js/script.js"></script>
 	<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbRgaGeQHz00zeL4NexIxpuJrxZjiU9To&signed_in=true&callback=initMap">
-	</script>
-	<script>
-		new WOW().init();
 	</script>
 </body>
 </html>
