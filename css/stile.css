@@ -46,6 +46,9 @@ a.link {
     color: inherit;
     background: #c0e642 none repeat scroll 0 0; }
 
+i {
+  margin-right: 0.6em; }
+
 .circle {
   width: 120px;
   height: 120px;
@@ -88,7 +91,6 @@ input[type=submit] {
   font-size: 3.2em; }
 
 .hvr-bounce-to-bottom {
-  display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -135,8 +137,8 @@ input[type=submit] {
     #HEADER
 \*-------------------------------------------------*/
 header #logo h2 {
-  margin-top: 0;
-  margin-left: 15px; }
+  margin-top: 0.3em;
+  margin-left: 0.3em; }
 header #logo img {
   width: 390px;
   padding-top: 1.2em; }
@@ -152,7 +154,7 @@ header ul {
     float: left; }
     header ul li a {
       display: block;
-      padding: 63px 20px;
+      padding: 72px 20px;
       color: #6B5F51;
       font-size: 1em;
       font-weight: bold;
@@ -174,6 +176,10 @@ header .active {
 \*-------------------------------------------------*/
 main h1.titolo {
   text-align: left; }
+main .header-servizi {
+  text-align: center; }
+  main .header-servizi img {
+    width: 75%; }
 main #map {
   border-top: 2px rgba(142, 180, 16, 0.3) solid;
   border-bottom: 2px rgba(142, 180, 16, 0.3) solid;
@@ -315,6 +321,8 @@ footer {
     margin-bottom: 0; }
     header #logo {
       text-align: center; }
+      header #logo h2 {
+        margin-left: 0; }
       header #logo img {
         width: 100%;
         max-width: 390px; }
@@ -323,17 +331,24 @@ footer {
       margin: 0;
       padding: 0; }
       header ul li {
-        width: 50%; }
+        width: 50%;
+        text-align: center; }
         header ul li a {
           padding: 10px 0; }
 
   /* Main */
   main {
     padding: 0; }
-    main .slider .motto p {
-      line-height: 1; }
-    main .slider.home a.callToAction {
-      display: none; }
+    main .slider .motto {
+      top: 30%; }
+      main .slider .motto p {
+        line-height: 1; }
+    main .slider.home {
+      background-position: center;
+      background-size: cover;
+      height: 350px; }
+      main .slider.home a.callToAction {
+        display: none; }
     main #map {
       height: 200px;
       margin-bottom: 2em; }

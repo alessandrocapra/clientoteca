@@ -95,6 +95,10 @@ a {
     }
 }
 
+i {
+    margin-right: 0.6em;
+}
+
 .circle {
     @include circle(120px);
     background-color: $verdeClientoteca;
@@ -134,7 +138,7 @@ input[type=submit] {
 
 // Animazione per menù
 .hvr-bounce-to-bottom {
-    display: inline-block;
+    //display: inline-block;
     vertical-align: middle;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -186,8 +190,8 @@ input[type=submit] {
 header {
     #logo {
         h2 {
-            margin-top: 0;
-            margin-left: 15px;
+            margin-top: 0.3em;
+            margin-left: 0.3em;
         }
 
         img {
@@ -213,7 +217,7 @@ header {
 
             a {
                 display: block;
-                padding: 63px 20px;
+                padding: 72px 20px;
                 color: #6B5F51;
                 font-size: 1em;
                 font-weight: bold;
@@ -252,6 +256,14 @@ main {
 
         &.titolo {
             text-align: left;
+        }
+    }
+
+    .header-servizi {
+        text-align: center;
+
+        img {
+            width: 75%;
         }
     }
 
@@ -512,7 +524,7 @@ footer {
             text-align: center;
 
             h2 {
-
+                margin-left:0;
             }
 
             img {
@@ -528,6 +540,7 @@ footer {
 
             li {
                 width: 50%;
+                text-align: center;
 
                 a {
                     padding: 10px 0;
@@ -545,12 +558,18 @@ footer {
 
             .motto {
 
+                top: 30%;
+
                 p {
                     line-height: 1;
                 }
             }
 
             &.home {
+
+                background-position: center;
+                background-size: cover;
+                height:350px;
 
                 a {
                     &.callToAction {
