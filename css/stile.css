@@ -177,9 +177,36 @@ header .active {
 main h1.titolo {
   text-align: left; }
 main .header-servizi {
-  text-align: center; }
-  main .header-servizi img {
-    width: 75%; }
+  text-align: center;
+  margin: 0 auto;
+  background-image: url(../img/servizi.png);
+  background-repeat: no-repeat; }
+  main .header-servizi + main h2 {
+    text-align: center; }
+  main .header-servizi.web {
+    height: 118px;
+    width: 112px;
+    background-position: 0% 0%; }
+  main .header-servizi.brochure {
+    height: 118px;
+    width: 112px;
+    background-position: 19.6% 0%; }
+  main .header-servizi.sondaggi {
+    height: 118px;
+    width: 112px;
+    background-position: 39.6% 0%; }
+  main .header-servizi.seo {
+    height: 118px;
+    width: 112px;
+    background-position: 59.6% 0%; }
+  main .header-servizi.newsletter {
+    height: 118px;
+    width: 112px;
+    background-position: 79.6% 0%; }
+  main .header-servizi.training {
+    height: 118px;
+    width: 112px;
+    background-position: 99.2% 0%; }
 main #map {
   border-top: 2px rgba(142, 180, 16, 0.3) solid;
   border-bottom: 2px rgba(142, 180, 16, 0.3) solid;
