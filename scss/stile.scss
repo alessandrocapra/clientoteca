@@ -461,6 +461,10 @@ footer {
         margin: 0;
         padding: 0;
 
+        &.services li{
+            text-align: center;
+        }
+
         &.vertical li {
             display: inline-block;
             padding-top: 0;
