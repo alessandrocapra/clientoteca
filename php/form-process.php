@@ -18,29 +18,28 @@ if (empty($_POST["message"])) {
 } else {
     $message = $_POST["message"];
 }
-$EmailTo = "alessandro.cpr@gmail.com";
+$EmailTo = "contatto@clientoteca.com";
 $Subject = "Nuovo messaggio da sito Clientoteca";
 
 // prepare email body text
 $Body = "";
-$Body .= "Name: ";
+$Body .= "Messaggio ricevuto dal form del sito Clientoteca!";
+$Body .= "\n";
+$Body .= "\n";
+$Body .= "Nome: ";
 $Body .= $name;
 $Body .= "\n";
 $Body .= "Email: ";
 $Body .= $email;
 $Body .= "\n";
-$Body .= "Message: ";
+$Body .= "\n";
+$Body .= "Messaggio: ";
 $Body .= $message;
 $Body .= "\n";
 
-// CSV
-$Content = "Name, Email, Message\n";
-$Content .= "$name, $email, $message\n";
-$FileName = "datiform-".date("d-m-y-h:i").".csv";
-header('Content-Type: application/csv');
-header('Content-Disposition: attachment; filename="' . $FileName . '"');
-echo $Content;
-exit();
+//// CSV
+//$Content = "Name, Email, Message\n";
+//$Content .= "$name, $email, $message\n";
 
 // send email
 $success = mail($EmailTo, $Subject, $Body, "From:".$email);

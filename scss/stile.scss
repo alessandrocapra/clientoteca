@@ -328,6 +328,7 @@ main {
             h1 {
                 font-size: 2.5em;
                 color: #fff;
+                text-shadow: 3px 3px 1px $grigioClientoteca;
             }
 
             p {
@@ -456,6 +457,18 @@ footer {
     padding: $section-padding 0;
     //margin-top: $section-margin;
 
+    a {
+        @extend footer;
+        color: $verdeClientoteca;
+        padding: 0;
+
+        &:hover {
+            text-decoration: none;
+            font-weight: 700;
+            color: $verdeClientoteca;
+        }
+    }
+
     ul {
         list-style-type: none;
         margin: 0;
@@ -531,7 +544,8 @@ footer {
                 top: -3%;
 
                 h1 {
-                    font-size: 3em;
+                    font-size: 2.2em;
+                    //color: $verdeClientoteca;
                 }
 
                 p {
