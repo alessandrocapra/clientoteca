@@ -42,7 +42,7 @@
 
 				<div class="col-sm-12">
 					<?php
-					$servername = "192.168.56.101";
+					$servername = "localhost";
 					$username = "clientoteca";
 					$password = "clientoteca";
 					$dbname = "clientoteca";
@@ -66,13 +66,16 @@
 //					}
 
 					// Retrieve data
-					$sql = "SELECT * FROM prova";
+					$sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = 17 and micro_id in (select customer_id from MacroJunction where macro_id = 1);
+";
+
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {
 						// output data of each row
 						while($row = $result->fetch_assoc()) {
-							echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+//							echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+							echo $row["sum(numero_totale)"]. "<br>";
 						}
 					} else {
 						echo "0 results";
