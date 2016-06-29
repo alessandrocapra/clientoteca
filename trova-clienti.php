@@ -66,7 +66,7 @@
 //					}
 
 					// Retrieve data
-					$sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = 17 and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = 1));
+					$sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = 21 and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = 103));
 ";
 
 					$result = $conn->query($sql);
