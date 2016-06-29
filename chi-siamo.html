@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Clientoteca - trova nuovi clienti e aumenta la visibilità della tua azienda!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -18,7 +18,7 @@
           		center: myLatLang,
           		zoom: 12,
           		scrollwheel: false,
-          		mapTypeId: google.maps.MapTypeId.HYBRID
+//          		mapTypeId: google.maps.MapTypeId.HYBRID
         	});
 
 			var marker = new google.maps.Marker({
@@ -33,50 +33,74 @@
     </script>
 </head>
 <body>
-	<header class="container-fluid">
+	<header class="container">
 		<div class="row">
-			<div id="logo" class="col-sm-4">
+			<div id="logo" class="col-sm-6 col-xs-12">
 				<img src="img/logo.png" alt="Clientoteca">
 				<h2>Per chi ha voglia di fare!</h2>
 			</div>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
-					<li><a href="servizi.html">Servizi</a></li>
-					<li><a href="trova-clienti.html">Area Interesse</a></li>
-				</ul>
-			</nav>
+			<div class="col-xs-12 col-sm-6">
+				<nav>
+					<ul>
+						<li><a class="hvr-bounce-to-bottom" href="index.html">Home</a></li>
+						<li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
+						<li><a class="hvr-bounce-to-bottom" href="servizi.html">Servizi</a></li>
+						<li><a class="hvr-bounce-to-bottom" href="trova-clienti.html">Area Interesse</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</header>
 	
 
 	<main>
-		<section id="map" class="container-fluid slider">
-			<!-- <div class="motto col-xs-12 col-sm-6">
+		<section class="container-fluid slider home">
+			<div class="motto col-xs-12 col-sm-6">
 				<h1>Trova nuovi clienti!</h1>
-				<p>Un metodo testato, pratico e veloce per trovare nuovi clienti.</p>
-			</div> -->
+				<p>Un metodo facile, pratico e veloce per trovare nuovi clienti.</p>
+				<a href="trova-clienti.html" class="callToAction">Provalo gratis!</a>
+			</div>
 		</section>
 		<article class="container">
 			<div class="row">
-				<h1 class="titolo">Chi è Clientoteca?</h1>
-				<section class="row wow bounceInUp">
-					<section class="col-sm-6 col-md-6">
-						<header class="head">
-							<div class="fa fa-rocket"></div>
-							<h3>Descrittiva 1</h3>
-						</header>
-						<p>Clientoteca non nasce da consulenti ma da imprenditori che hanno creato questo metodo per aziende reali di beni materiali.</p>
+				<div class="col-sm-8">
+					<h1 class="titolo">Chi è Clientoteca?</h1>
+					<p>Clientoteca è un’azienda che nasce non da consulenti ma da imprenditori che hanno sviluppato questo metodo per quelle aziende che offrono beni materiali.</p>
+					<p>L’azienda è stata creata per far fronte ad un’esigenza specifica delle aziende di oggi, farsi conoscere sul mercato. Il modo migliore per trovare nuovi clienti è farsi conoscere cogliendo l’occasione per comprendere se i servizi e i prodotti offerti siano effettivamente richiesti dal mercato.</p>
+					<!--<img src="http://placehold.it/700x400" style="width: 100%; height: auto" alt="">-->
+
+					<h1>Contattaci!</h1>
+					<p>Per entrare in contatto con noi, chiamaci al numero 0464 518003 oppure compila il form sottostante.</p>
+					<form role="form" id="contactForm" data-toggle="validator" class="shake">
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<label for="name" class="h4">Nome</label>
+								<input type="text" class="form-control" id="name" placeholder="Inserisci nome" required data-error="Il nome è obbligatorio">
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="email" class="h4">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Inserisci email" required data-error="La email è obbligatoria">
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="message" class="h4 ">Messaggio</label>
+							<textarea id="message" class="form-control" rows="5" placeholder="Inserisci il tuo messaggio" required data-error="Il messaggio è obbligatorio"></textarea>
+							<div class="help-block with-errors"></div>
+						</div>
+						<button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Invia</button>
+						<div id="msgSubmit" class="h3 text-center hidden"></div>
+						<div class="clearfix" style="padding-bottom: 1.2em;"></div>
+					</form>
+
+				</div> <!-- end col-sm-8 -->
+				<div class="col-sm-4">
+					<h1>Dove siamo</h1>
+					<p>Via S. Caterina 74/D, Arco (TN)</p>
+					<section id="map" class="slider">
 					</section>
-					<section class="col-sm-6 col-md-6">
-						<header class="head">
-							<div class="fa fa-dashboard"></div>
-							<h3>Descrittiva 2</h3>
-						</header>
-						<p>L’azienda nasce dall’esigenza di farsi conoscere sul mercato, comprendere se i servizi e i prodotti offerti fossero effettivamente richiesti dal mercato e trovare nuovi clienti.</p>
-					</section>
-				</section>
+				</div>
 			</div>
 		</article>
 	</main>
@@ -85,17 +109,20 @@
 	<footer class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4">
-				<h3>Lista di qualcosa</h3>
-				<ul>
-					<li>Primo</li>
-					<li>Secondo</li>
-					<li>Terzo</li>
-					<li>Quarto</li>
+				<h3>Servizi offerti</h3>
+				<ul class="services">
+					<li>Web</li>
+					<li>Brochure</li>
+					<li>Sondaggi</li>
+					<li>Seo</li>
+					<li>Newsletter</li>
+					<li>Training</li>
 				</ul>
 			</div>
 			<div class="col-sm-4">
 				<h3>Clientoteca srl</h3>
-				<p>Via S. Caterina 64 - Arco (TN)</p>
+				<p>Via S. Caterina 74/D - Arco (TN)</p>
+				<p>P.IVA 02401360223</p>
 				<ul class="vertical">
 					<li><i class="fa fa-facebook-f fa-2x"></i></li>
 					<li><i class="fa fa-twitter fa-2x"></i></li>
@@ -103,8 +130,8 @@
 				</ul>
 			</div>
 			<div class="col-sm-4">
-				<h3>Cosa mettiamo qui?</h3>
-				<p>Potrebbe esserci qualche link a qualche contenuto del sito, altrimenti ci piazzo la cookie e privacy policy.</p>
+				<h3>Privacy policy</h3>
+				<a href="//www.iubenda.com/privacy-policy/7817932" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 			</div>
 		</div>
 	</footer>
@@ -112,13 +139,10 @@
 	<!-- SCRIPTS -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="js/wow.min.js"></script>
+	<script src="js/validator.js"></script>
+	<script src="js/script.js"></script>
 	<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbRgaGeQHz00zeL4NexIxpuJrxZjiU9To&signed_in=true&callback=initMap">
-	</script>
-	<script>
-		new WOW().init();
 	</script>
 </body>
 </html>

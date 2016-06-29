@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Clientoteca - trova nuovi clienti e aumenta la visibilità della tua azienda!</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -11,73 +12,81 @@
 	<link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
-	<header class="container-fluid">
+	<header class="container">
 		<div class="row">
-			<div id="logo" class="col-xs-12 col-sm-4">
+			<div id="logo" class="col-xs-12 col-sm-6">
 				<img src="img/logo.png" alt="Clientoteca">
 				<h2>Per chi ha voglia di fare!</h2>
 			</div>
-			<nav>
-				<ul>
-					<li><a href="index.html" class="active">Home</a></li>
-					<li><a href="chi-siamo.html">Chi siamo</a></li>
-					<li><a href="servizi.html">Servizi</a></li>
-					<li><a href="trova-clienti.html">Area Interesse</a></li>
-				</ul>
-			</nav>
+			<div class="col-xs-12 col-sm-6">
+				<nav>
+					<ul>
+						<li><a href="index.html" class="active">Home</a></li>
+						<li><a class="hvr-bounce-to-bottom" href="chi-siamo.html">Chi siamo</a></li>
+						<li><a class="hvr-bounce-to-bottom" href="servizi.html">Servizi</a></li>
+						<li><a class="hvr-bounce-to-bottom" href="trova-clienti.html">Area Interesse</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</header>
 	
 
 	<main>
-		<section class="container-fluid slider home">
-			<div class="motto col-xs-12 col-sm-6">
-				<h1>Trova nuovi clienti!</h1>
-				<p>Un metodo testato, pratico e veloce per trovare nuovi clienti.</p>
-				<a href="trova-clienti.html" class="callToAction">Provalo gratis!</a>
+		<section class="container-fluid slider home outer">
+			<div class="motto col-xs-12 col-sm-6 middle">
+				<section class="inner">
+					<h1>Metodo facile, pratico e veloce</h1>
+					<p>per trovare nuovi clienti.</p>
+					<a href="trova-clienti.html" class="callToAction">Provalo gratis!</a>
+				</section>
 			</div>
 		</section>
 		<article class="container">
-			<section class="row services">
-				<section class="service col-sm-12 col-md-12 wow bounceInUp">
-					<div class="row">
-						<div class="col-sm-6">
-							<img class="icon" src="img/target-icon.png" alt="target">
-						</div>
-						<div class="col-sm-6">
-							<header class="head">
-								<h3>Definire il target</h3>
-							</header>
-							<p>Grazie a Clientoteca è possibile definire quale sia il target di clientela specifico per i vari prodotti offerti. Questo permette di creare un bacino mirato di nominativi che possono essere interessati al prodotto.</p>
-						</div>
+			<section class="row services" style="background: url(img/new_year_background.png) repeat;">
+				<section class="service col-sm-12 col-md-12 wow fadeInLeft" style="background-color: #E9F2F9;">
+					<div class="col-sm-6 service-img">
+						<img class="icon" src="img/target-icon.png" alt="target">
+					</div>
+					<div class="col-sm-6">
+						<header class="head">
+							<h2>Definire il target</h2>
+						</header>
+						<p>Grazie a Clientoteca è possibile definire quale sia il target di clientela specifico per i vari prodotti offerti. Questo permette di creare un bacino mirato di nominativi che possono essere interessati al prodotto.</p>
 					</div>
 				</section>
-				<section class="service col-sm-12 col-md-12 wow bounceInUp">
-					<div class="row">
-						<div class="col-md-6">
-							<header class="head">
-								<h3>Incontrare potenziali clienti</h3>
-							</header>
-							<p>Grazie a Clientoteca è possibile fissare appuntamenti con clienti che dimostrino interesse nei confronti dei prodotti da voi offerti. Tali appuntamenti sono geo localizzati così da poter risparmiare risorse e tempo.</p>
-						</div>
-						<div class="col-md-6">
-							<img class="icon" src="img/bag-icon.png" alt="Nuovi clienti">
-						</div>
+				<section class="service col-sm-12 wow fadeInRight" data-wow-offset="50" >
+					<div class="col-sm-6 col-sm-push-6 service-img">
+						<img class="icon" src="img/bag-icon.png" alt="Nuovi clienti">
+					</div>
+					<div class="col-sm-6 col-sm-pull-6">
+						<header class="head">
+							<h2>Incontrare potenziali clienti</h2>
+						</header>
+						<p>Grazie a Clientoteca è possibile fissare appuntamenti con clienti che dimostrino interesse nei confronti dei prodotti da voi offerti. Tali appuntamenti sono geo localizzati così da poter risparmiare risorse e tempo.</p>
 					</div>
 				</section>
-				<section class="col-sm-6 col-md-6 wow bounceInUp">
-					<header class="head">
-						<div class="fa fa-lock"></div>
-						<h3>Incrementare la rete di contatti per la vendita</h3>
-					</header>
-					<p>Mantenendo vivo l’interesse dei <a class="link" href="#">clienti</a> dopo l’incontro questo favorisce a far si che si “ricordino della vostra azienda” e che siano maggiormente inclini a fare richieste d’ordini ed offerte. In questo modo amplierete il vostro parco clienti e la vostra rete di vendita.</p>
+				<section class="service col-sm-12 col-md-12 wow fadeInLeft" data-wow-offset="50" style="background-color: #E9F2F9;">
+					<div class="col-sm-6 service-img">
+						<img class="icon" src="img/world-icon.png" alt="target">
+					</div>
+					<div class="col-sm-6">
+						<header class="head">
+							<h2>Incrementare la rete di contatti per la vendita</h2>
+						</header>
+						<p>Mantenendo vivo l’interesse dei clienti dopo l’incontro per far si che si "ricordino della vostra azienda” e che siano maggiormente inclini a fare richieste d’ordini ed offerte. In questo modo amplierete il vostro parco clienti e la vostra rete di vendita.</p>
+					</div>
 				</section>
-				<section class="col-sm-6 col-md-6 wow bounceInUp">
-					<header class="head">
-						<div class="fa fa-globe"></div>
-						<h3>Aumentare visibilità aziendale</h3>
-					</header>
-					<p>Attraverso interventi mirati è possibile aumentare sia la visibilità reale che quella virtuale dell’azienda. Ciò è possibile combinando interventi online di gestione del sito web aziendale, campagne SEO,  emailmarketing e newsletter con sondaggi i soddisfazione della clientela e brochure.</p>
+				<section class="service col-sm-12 col-md-12 wow fadeInRight" data-wow-offset="50">
+					<div class="col-sm-6 col-sm-push-6 service-img">
+						<img class="icon" src="img/devices-icon.png" alt="Nuovi clienti">
+					</div>
+					<div class="col-sm-6 col-sm-pull-6">
+						<header class="head">
+							<h2>Aumentare visibilità aziendale</h2>
+						</header>
+						<p>Attraverso interventi mirati è possibile aumentare sia la visibilità reale che quella virtuale dell’azienda. Ciò è possibile combinando interventi online di gestione del sito web aziendale, campagne SEO, emailmarketing, newsletter con sondaggi di soddisfazione della clientela e brochure.</p>
+					</div>
 				</section>
 			</section>
 		</article>
@@ -87,17 +96,20 @@
 	<footer class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4">
-				<h3>Lista di qualcosa</h3>
-				<ul>
-					<li>Primo</li>
-					<li>Secondo</li>
-					<li>Terzo</li>
-					<li>Quarto</li>
+				<h3>Servizi offerti</h3>
+				<ul class="services">
+					<li>Web</li>
+					<li>Brochure</li>
+					<li>Sondaggi</li>
+					<li>Seo</li>
+					<li>Newsletter</li>
+					<li>Training</li>
 				</ul>
 			</div>
 			<div class="col-sm-4">
 				<h3>Clientoteca srl</h3>
-				<p>Via S. Caterina 64 - Arco (TN)</p>
+				<p>Via S. Caterina 74/D - Arco (TN)</p>
+				<p>P.IVA 02401360223</p>
 				<ul class="vertical">
 					<li><i class="fa fa-facebook-f fa-2x"></i></li>
 					<li><i class="fa fa-twitter fa-2x"></i></li>
@@ -105,8 +117,8 @@
 				</ul>
 			</div>
 			<div class="col-sm-4">
-				<h3>Cosa mettiamo qui?</h3>
-				<p>Potrebbe esserci qualche link a qualche contenuto del sito, altrimenti ci piazzo la cookie e privacy policy.</p>
+				<h3>Privacy policy</h3>
+				<a href="http://www.iubenda.com/privacy-policy/7817932" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 			</div>
 		</div>
 	</footer>
