@@ -19,20 +19,20 @@ $(document).ready(function(){
    });
 
     $('#trovaClienti').on('click', function() {
-        var macro_id = $();
-        var macro_id = this.value;
-        
-        var dataString = 'id='+ mega_id;
+        var macro_id = $('#macro').val();
+        var regione_id = $('#regione').val();
+
+        var dataString = 'id='+ macro_id + '&regione=' + regione_id;
 
         $.ajax
         ({
             type: "POST",
-            url: "../php/getMacro.php",
+            url: "../php/getLeads.php",
             data: dataString,
             cache: false,
             success: function(html)
             {
-                $("#macro").html(html);
+                $("#potenzialiClienti").html(html);
             }
         });
     });

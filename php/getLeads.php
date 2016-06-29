@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "clientoteca";
 $password = "clientoteca";
@@ -15,21 +14,24 @@ if ($conn->connect_error) {
 
 if (isset($_POST['id'])) {
 
-    $id=$_POST['id'];
+    $id = $_POST['id'];
+    $regione = $_POST['regione'];
 
-    $sql = "SELECT id,nome FROM Macro WHERE mega_id = $id";
+    // Retrieve data
+    $sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = $regione and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = $id));
+    ";
+
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "<option value=\" " . $row['id'] . " \">" . $row['nome'] . "</option>";
+        while ($row = $result->fetch_assoc()) {
+            //							echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+            echo $row["sum(numero_totale)"] . "<br>";
         }
     } else {
         echo "0 results";
     }
-
-    $conn->close();
 }
 
-
+$conn->close();

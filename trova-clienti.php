@@ -39,42 +39,9 @@
 		<article class="container-fluid">
 			<h1 class="titolo">Come funziona Clientoteca</h1>
 			<section class="row services">
-
-				<div class="col-sm-12">
-					<?php
-					$servername = "localhost";
-					$username = "clientoteca";
-					$password = "clientoteca";
-					$dbname = "clientoteca";
-
-					// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-
-					// Check connection
-					if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					}
-					
-					// Retrieve data
-					$sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = 21 and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = 103));
-";
-
-					$result = $conn->query($sql);
-
-					if ($result->num_rows > 0) {
-						// output data of each row
-						while($row = $result->fetch_assoc()) {
-//							echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
-							echo $row["sum(numero_totale)"]. "<br>";
-						}
-					} else {
-						echo "0 results";
-					}
-
-					$conn->close();
-
-					?>
-				</div>
+<!---->
+<!--				<div class="col-sm-12">-->
+<!--				</div>-->
 
 				<div class="col-sm-2 col-sm-offset-1">
 					<div class="circle">1</div>
@@ -132,6 +99,8 @@
 									} else {
 										echo "0 results";
 									}
+
+									$conn->close();
 									?>
 								</select>
 							</div>
@@ -149,7 +118,37 @@
                             <h3>Regione</h3>
                             <select name="regione" id="regione">
 								<option selected value="selezioneRegione">Seleziona regione</option>
+								<?php
+
+								$servername = "localhost";
+								$username = "clientoteca";
+								$password = "clientoteca";
+								$dbname = "clientoteca";
+
+								// Create connection
+								$conn = new mysqli($servername, $username, $password, $dbname);
+
+								// Check connection
+								if ($conn->connect_error) {
+									die("Connection failed: " . $conn->connect_error);
+								}
+
+								$sql = "SELECT id,nome FROM Regione";
+								$result = $conn->query($sql);
+
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
+										echo "<option value=\" " . $row['id'] . " \">" . $row['nome'] . "</option>";
+									}
+								} else {
+									echo "0 results";
+								}
+
+								$conn->close();
+								?>
                             </select>
+							<input type="submit" id="trovaClienti" value="Trova Clienti">
                         </div>
                     </div>
                 </div>
@@ -157,7 +156,7 @@
 					<section class="risultati">
 						<h1 class="titolo">Risultati</h1>
 						<div class="col-sm-4 col-sm-offset-2">
-							<h2>300</h2>
+							<h2 id="potenzialiClienti">300</h2>
 							<p>potenziali clienti</p>
 						</div>
 						<div class="col-sm-4">
