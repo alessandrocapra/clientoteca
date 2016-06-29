@@ -1,3 +1,45 @@
+// cambio select in pagina trova-clienti.php
+
+$(document).ready(function(){
+   $('#mega').on('change', function() {
+       var mega_id = this.value;
+       var dataString = 'id='+ mega_id;
+
+       $.ajax
+       ({
+           type: "POST",
+           url: "../php/getMacro.php",
+           data: dataString,
+           cache: false,
+           success: function(html)
+           {
+               $("#macro").html(html);
+           }
+       });
+   });
+
+    $('#trovaClienti').on('click', function() {
+        var macro_id = $();
+        var macro_id = this.value;
+        
+        var dataString = 'id='+ mega_id;
+
+        $.ajax
+        ({
+            type: "POST",
+            url: "../php/getMacro.php",
+            data: dataString,
+            cache: false,
+            success: function(html)
+            {
+                $("#macro").html(html);
+            }
+        });
+    });
+});
+
+// parte form
+
 $("#contactForm").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
@@ -51,3 +93,4 @@ function submitMSG(valid, msg){
     }
     $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
+

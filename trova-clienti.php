@@ -54,17 +54,7 @@
 					if ($conn->connect_error) {
 						die("Connection failed: " . $conn->connect_error);
 					}
-
-					// Insert data
-//					$sql = "INSERT INTO prova (id, name)
-//VALUES (NULL, 'John')";
-//
-//					if ($conn->query($sql) === TRUE) {
-//						echo "New record created successfully";
-//					} else {
-//						echo "Error: " . $sql . "<br>" . $conn->error;
-//					}
-
+					
 					// Retrieve data
 					$sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = 21 and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = 103));
 ";
@@ -114,21 +104,41 @@
 						<form action="">
 							<div class="col-sm-12">
 								<h2>Tipo di attività</h2>
-                                <h3>Settore</h3>
-                                <select name="" id="settore">
-                                    <option value="primo">primo</option>
-                                    <option value="secondo">secondo</option>
-                                    <option value="terzo">terzo</option>
-                                    <option value="quarto">quarto</option>
-                                </select>
+                                <h3>Mega</h3>
+								<select name="mega" id="mega">
+									<?php
+
+									$servername = "localhost";
+									$username = "clientoteca";
+									$password = "clientoteca";
+									$dbname = "clientoteca";
+
+									// Create connection
+									$conn = new mysqli($servername, $username, $password, $dbname);
+
+									// Check connection
+									if ($conn->connect_error) {
+										die("Connection failed: " . $conn->connect_error);
+									}
+
+									$sql = "SELECT id,name FROM Mega";
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+										// output data of each row
+										while($row = $result->fetch_assoc()) {
+											echo "<option value=\" " . $row['id'] . " \">" . $row['name'] . "</option>";
+										}
+									} else {
+										echo "0 results";
+									}
+									?>
+								</select>
 							</div>
 							<div class="col-sm-12">
-                                <h3>Microsettore</h3>
-                                <select name="" id="microsettore">
-                                    <option value="primo">primo</option>
-                                    <option value="secondo">secondo</option>
-                                    <option value="terzo">terzo</option>
-                                    <option value="quarto">quarto</option>
+                                <h3>Macro</h3>
+                                <select name="macro" id="macro">
+                                    <option disabled>Seleziona mega...</option>
                                 </select>
 							</div>
 						</form>	
@@ -137,25 +147,10 @@
                         <div class="col-sm-12">
                             <h2>Geolocalizzazione</h2>
                             <h3>Regione</h3>
-                            <select name="" id="regione">
-                                <option value="primo">Tutte le regioni</option>
-                                <option value="secondo">Abruzzo</option>
-                                <option value="terzo">Marche</option>
-                                <option value="quarto">Molise</option>
+                            <select name="regione" id="regione">
+								<option selected value="selezioneRegione">Seleziona regione</option>
                             </select>
                         </div>
-                        <div class="col-sm-12">
-                            <h3>Comune</h3>
-                            <select name="" id="comune">
-                                <option value="primo">Tutti i comuni</option>
-                                <option value="secondo">Borgo Valsugana</option>
-                                <option value="terzo">Trento</option>
-                                <option value="quarto">Rovereto</option>
-                            </select>
-
-                            <input type="submit" value="Cerca clienti!">
-                        </div>
-
                     </div>
                 </div>
 				<div class="col-sm-8">
@@ -205,6 +200,7 @@
 	
 	<!-- SCRIPTS -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/script.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="js/wow.min.js"></script>
