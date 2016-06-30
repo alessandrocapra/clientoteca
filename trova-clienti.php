@@ -63,7 +63,7 @@
 <!--				<h1 class="titolo">Trova nuovi potenziali clienti!</h1>-->
 				<div class="col-sm-10 col-sm-offset-1">
 					<div class="row">
-						<form action="">
+						<form action="" onsubmit="event.preventDefault();processForm();">
 							<div class="col-sm-3">
 <!--								<h2>Tipo di attività</h2>-->
 								<h3>Settore</h3>
@@ -91,41 +91,24 @@
 							<div class="col-sm-3">
 								<h3>Attività</h3>
 								<select name="macro" id="macro">
-									<option disabled>Seleziona mega...</option>
+									<option selected disabled>Seleziona mega...</option>
 								</select>
 							</div>
 							<div class="col-sm-3">
 <!--								<h2>Geolocalizzazione</h2>-->
 								<h3>Regione</h3>
 								<select name="regione" id="regione">
-									<option selected value="selezioneRegione">Seleziona regione</option>
-									<?php
-
-									include('php/dbconnection.php');
-
-									$sql = "SELECT id,nome FROM Regione";
-									$result = $conn->query($sql);
-
-									if ($result->num_rows > 0) {
-										// output data of each row
-										while($row = $result->fetch_assoc()) {
-											echo "<option value=\" " . $row['id'] . " \">" . $row['nome'] . "</option>";
-										}
-									} else {
-										echo "0 results";
-									}
-
-									$conn->close();
-									?>
+									<option selected disabled value="selezioneRegione">Seleziona regione</option>
 								</select>
 							</div>
 							<div class="col-sm-3">
 								<h3>Email</h3>
-								<input type="email" placeholder="Inserire email di contatto">
+								<input type="email" id="email" placeholder="Inserire email di contatto">
 							</div>
 							<div class="col-sm-12">
 								<input type="submit" id="trovaClienti" value="Trova Clienti">
 							</div>
+							<p id="result"></p>
 						</form>
 					</div>
 			</section>

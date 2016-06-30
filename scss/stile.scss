@@ -152,6 +152,23 @@ input[type=submit] {
     font-size: $body-text;
 }
 
+#result {
+    display: none;
+    font-size: $body-text;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 1em;
+    padding: 0.3em 0.5em;
+    border-radius: 0.2em;
+
+    &.success {
+        color: green;
+    }
+
+    &.error {
+        color: red;
+    }
+}
+
 // Animazione per menù
 .hvr-bounce-to-bottom {
     //display: inline-block;

@@ -99,6 +99,18 @@ input[type=submit] {
   font-weight: 700;
   font-size: 1.6em; }
 
+#result {
+  display: none;
+  font-size: 1.6em;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 1em;
+  padding: 0.3em 0.5em;
+  border-radius: 0.2em; }
+  #result.success {
+    color: green; }
+  #result.error {
+    color: red; }
+
 .hvr-bounce-to-bottom {
   vertical-align: middle;
   -webkit-transform: translateZ(0);
