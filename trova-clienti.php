@@ -68,6 +68,7 @@
 <!--								<h2>Tipo di attività</h2>-->
 								<h3>Settore</h3>
 								<select name="mega" id="mega">
+									<option selected value="defaultMega">Seleziona settore</option>
 									<?php
 
 									include('php/dbconnection.php');
@@ -91,7 +92,7 @@
 							<div class="col-sm-3">
 								<h3>Attività</h3>
 								<select name="macro" id="macro">
-									<option selected disabled>Seleziona mega...</option>
+									<option selected disabled>Seleziona attività</option>
 								</select>
 							</div>
 							<div class="col-sm-3">

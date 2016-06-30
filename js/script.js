@@ -4,8 +4,12 @@ function validateEmail(email) {
 }
 
 function processForm() {
-    // Variables
+
+    // check email
     var $email = $('#email');
+    var $mega = $('#mega');
+    var $macro = $('#macro');
+    var $regione = $('#regione');
     var $result = $('#result');
 
     if (!$email.val()) {
@@ -22,8 +26,37 @@ function processForm() {
         }
     }
 
+    // check selected options
+    if ($mega.val().is('defaultMega')) {
+        console.log("Selezionare settore");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare settore');
+        return false;
+    }
+
+    if ($macro.val().is('defaultMacro')) {
+        console.log("Selezionare attività");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare attività');
+        return false;
+    }
+
+    if ($regione.val().is('defaultRegione')) {
+        console.log("Selezionare regione");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare regione');
+        return false;
+    }
+
     // send email
-    
+    $.ajax({
+        type: "POST",
+        url: "../php/form-process.php",
+        data: "id=" + $macro.val() + "&regione=" + $regione.val() + "&email=" + $email.val() ,
+        success : function(text){
+            $result.show().removeClass().addClass("success").html('<i class="glyphicon glyphicon-thumbs-up"></i><span>Iscrizione effettuata con successo!</span>');
+        }
+    });
 }
 
 
@@ -33,7 +66,7 @@ function processForm() {
 $(document).ready(function(){
 
     // validation
-    console.log($('select#macro'));
+    console.log($('select#mega option:selected').val());
 
    $('#mega').on('change', function() {
        var mega_id = this.value;
@@ -68,7 +101,7 @@ $(document).ready(function(){
     });
     
 
-    $('#trovaClienti').on('click', function() {
+    $('#trovaClienti').on('submit', function() {
         var macro_id = $('#macro').val();
         var regione_id = $('#regione').val();
 
