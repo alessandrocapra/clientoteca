@@ -50,45 +50,54 @@ i {
   margin-right: 0.6em; }
 
 .circle {
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
   text-align: center;
-  margin: 0 auto;
-  margin-bottom: 2em;
+  margin: 0.5em auto;
   border-radius: 50%;
   background-color: #8EB410;
   color: white;
-  font-size: 4em;
+  font-size: 2.4em;
   font-weight: bold; }
   .circle.gray {
     width: 80px;
     height: 80px;
     line-height: 80px;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 2em;
+    margin: 0.5em auto;
     border-radius: 50%;
     background-color: darkgrey; }
+  .circle + p {
+    text-align: center; }
 
 label {
   width: 100%; }
 
-select {
+select, input[type=email] {
   width: 100%;
   padding: 5px;
-  font-size: 1.6em; }
+  line-height: 26px;
+  font-size: 1.4em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
+input[type=email] {
+  border: 0;
+  padding: 7px; }
 
 input[type=submit] {
+  display: block;
+  margin: 2em auto;
+  margin-bottom: 0;
   border: none;
   border-radius: 5px;
-  width: 100%;
-  margin-top: 2em;
-  padding: 3em;
+  padding: 1em;
   background-color: #8EB410;
   color: white;
   font-weight: 700;
-  font-size: 3.2em; }
+  font-size: 1.6em; }
 
 .hvr-bounce-to-bottom {
   vertical-align: middle;
@@ -248,7 +257,9 @@ main .slider {
         color: #8EB410; }
 main .tabella {
   background-color: #c0e642;
-  padding-bottom: 20px; }
+  padding: 3em 0; }
+  main .tabella h3 {
+    margin-top: 0; }
 main .risultati {
   text-align: center; }
   main .risultati h2 {

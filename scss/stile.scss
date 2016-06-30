@@ -31,8 +31,7 @@ $border-radius-default: 5px;
 	height: $diametro;
 	line-height: $diametro;
 	text-align: center;
-	margin: 0 auto;
-	margin-bottom: $section-margin;
+	margin: 0.5em auto;
 	border-radius: 50%;
 }
 
@@ -100,15 +99,19 @@ i {
 }
 
 .circle {
-    @include circle(120px);
+    @include circle(90px);
     background-color: $verdeClientoteca;
     color: white;
-    font-size: $body-text*2.5;
+    font-size: $body-text*1.5;
     font-weight: bold;
 
     &.gray {
         @include circle(80px);
         background-color: $darkgrey;
+    }
+
+    + p {
+        text-align: center;
     }
 }
 
@@ -119,21 +122,34 @@ label {
 select {
     width: 100%;
     padding: 5px;
+    line-height:26px;
     // border: none;
     // border-radius: $border-radius-default;
-    font-size: $body-text;
+    font-size: $body-text - 0.2;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+input[type=email] {
+    @extend select;
+    border: 0;
+    padding:7px;
 }
 
 input[type=submit] {
+    display: block;
+    margin:$section-margin auto;
+    margin-bottom:0;
     border: none;
     border-radius: $border-radius-default;
-    width: 100%;
-    margin-top: $section-margin;
-    padding: $section-padding;
+    //width: 100%;
+    padding: 1em;
     background-color: $verdeClientoteca;
     color: white;
     font-weight: $bold;
-    font-size: $body-text*2;
+    font-size: $body-text;
 }
 
 // Animazione per menù
@@ -377,7 +393,11 @@ main {
 
     .tabella {
         background-color: $verdeClientoteca+50;
-        padding-bottom: 20px;
+        padding: 3em 0;
+
+        h3 {
+            margin-top:0;
+        }
 
     }
 

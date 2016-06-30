@@ -1,16 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "clientoteca";
-$password = "clientoteca";
-$dbname = "clientoteca";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include('dbconnection.php');
 
 if (isset($_POST['id'])) {
 

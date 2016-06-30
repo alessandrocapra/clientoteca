@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
-	<header class="container-fluid">
+	<header class="container">
 		<div class="row">
-			<div id="logo" class="col-sm-4">
+			<div id="logo" class="col-sm-6">
 				<img src="img/logo.png" alt="Clientoteca">
 				<h2>Per chi ha voglia di fare!</h2>
 			</div>
@@ -36,57 +36,41 @@
 			</div>
 		</section>
 
-		<article class="container-fluid">
+		<article class="container">
 			<h1 class="titolo">Come funziona Clientoteca</h1>
 			<section class="row services">
-<!---->
-<!--				<div class="col-sm-12">-->
-<!--				</div>-->
-
-				<div class="col-sm-2 col-sm-offset-1">
+				<div class="col-sm-3">
 					<div class="circle">1</div>
 					<p>Seleziona il settore in cui operi</p>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<div class="circle">2</div>
 					<p>Affina la ricerca definendo il tuo settore operativo</p>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<div class="circle">3</div>
 					<p>Scegli l'area di tuo interesse</p>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<div class="circle">4</div>
-					<p>Inserisci i tuoi contatti per ricevere i dati richiesti</p>
-				</div>
-				<div class="col-sm-2">
-					<div class="circle">5</div>
-					<p>Ricevi i dati direttamente nella tua casella email!</p>
+					<p>Inserisci i tuoi contatti per ricevere i dati richiesti direttamente nella tua casella email!</p>
 				</div>
 			</section>
+		</article>
+
+		<article class="container-fluid">
 			<section class="row tabella">
-				<h1 class="titolo">Trova nuovi potenziali clienti!</h1>
-				<div class="col-sm-3 col-sm-offset-1">
+<!--				<h1 class="titolo">Trova nuovi potenziali clienti!</h1>-->
+				<div class="col-sm-10 col-sm-offset-1">
 					<div class="row">
 						<form action="">
-							<div class="col-sm-12">
-								<h2>Tipo di attività</h2>
-                                <h3>Mega</h3>
+							<div class="col-sm-3">
+<!--								<h2>Tipo di attività</h2>-->
+								<h3>Settore</h3>
 								<select name="mega" id="mega">
 									<?php
 
-									$servername = "localhost";
-									$username = "clientoteca";
-									$password = "clientoteca";
-									$dbname = "clientoteca";
-
-									// Create connection
-									$conn = new mysqli($servername, $username, $password, $dbname);
-
-									// Check connection
-									if ($conn->connect_error) {
-										die("Connection failed: " . $conn->connect_error);
-									}
+									include('php/dbconnection.php');
 
 									$sql = "SELECT id,name FROM Mega";
 									$result = $conn->query($sql);
@@ -104,67 +88,46 @@
 									?>
 								</select>
 							</div>
-							<div class="col-sm-12">
-                                <h3>Macro</h3>
-                                <select name="macro" id="macro">
-                                    <option disabled>Seleziona mega...</option>
-                                </select>
+							<div class="col-sm-3">
+								<h3>Attività</h3>
+								<select name="macro" id="macro">
+									<option disabled>Seleziona mega...</option>
+								</select>
 							</div>
-						</form>	
-					</div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h2>Geolocalizzazione</h2>
-                            <h3>Regione</h3>
-                            <select name="regione" id="regione">
-								<option selected value="selezioneRegione">Seleziona regione</option>
-								<?php
+							<div class="col-sm-3">
+<!--								<h2>Geolocalizzazione</h2>-->
+								<h3>Regione</h3>
+								<select name="regione" id="regione">
+									<option selected value="selezioneRegione">Seleziona regione</option>
+									<?php
 
-								$servername = "localhost";
-								$username = "clientoteca";
-								$password = "clientoteca";
-								$dbname = "clientoteca";
+									include('php/dbconnection.php');
 
-								// Create connection
-								$conn = new mysqli($servername, $username, $password, $dbname);
+									$sql = "SELECT id,nome FROM Regione";
+									$result = $conn->query($sql);
 
-								// Check connection
-								if ($conn->connect_error) {
-									die("Connection failed: " . $conn->connect_error);
-								}
-
-								$sql = "SELECT id,nome FROM Regione";
-								$result = $conn->query($sql);
-
-								if ($result->num_rows > 0) {
-									// output data of each row
-									while($row = $result->fetch_assoc()) {
-										echo "<option value=\" " . $row['id'] . " \">" . $row['nome'] . "</option>";
+									if ($result->num_rows > 0) {
+										// output data of each row
+										while($row = $result->fetch_assoc()) {
+											echo "<option value=\" " . $row['id'] . " \">" . $row['nome'] . "</option>";
+										}
+									} else {
+										echo "0 results";
 									}
-								} else {
-									echo "0 results";
-								}
 
-								$conn->close();
-								?>
-                            </select>
-							<input type="submit" id="trovaClienti" value="Trova Clienti">
-                        </div>
-                    </div>
-                </div>
-				<div class="col-sm-8">
-					<section class="risultati">
-						<h1 class="titolo">Risultati</h1>
-						<div class="col-sm-4 col-sm-offset-2">
-							<h2 id="potenzialiClienti">300</h2>
-							<p>potenziali clienti</p>
-						</div>
-						<div class="col-sm-4">
-							<h2>320</h2>
-							<p>mail di contatto</p>
-						</div>
-					</section>		
-				</div>
+									$conn->close();
+									?>
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<h3>Email</h3>
+								<input type="email" placeholder="Inserire email di contatto">
+							</div>
+							<div class="col-sm-12">
+								<input type="submit" id="trovaClienti" value="Trova Clienti">
+							</div>
+						</form>
+					</div>
 			</section>
 		</article>
 	</main>
