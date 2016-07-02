@@ -52,11 +52,20 @@ function SendEmail($errorMSG, $email, $numero_totale){
     $Body .= "\n";
     $Body .= "\n";
     $Body .= "Numero leads: ";
-    $Body .= $numero_totale;
-    $Body .= "\n";
-    $Body .= "Contatti email possibili: ";
-    $Body .= $numero_totale;
-    $Body .= "\n";
+    $Body .= $numero_totale * 0.66;
+    $Body .= "\n\n";
+    $Body .= "Target invio presentazione: ";
+    $Body .= $numero_totale * 0.22;
+    $Body .= "\n\n";
+    $Body .= "Numero di appuntamenti accettati: ";
+    $Body .= $numero_totale * 0.06;
+    $Body .= "\n\n";
+    $Body .= "Numero clienti: ";
+    $Body .= $numero_totale * 0.03;
+    $Body .= "\n\n";
+    $Body .= "Numero email raccolte: ";
+    $Body .= ($numero_totale * 0.66) * 0.3375;
+    $Body .= "\n\n";
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
