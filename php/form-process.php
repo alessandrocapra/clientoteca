@@ -48,24 +48,29 @@ function SendEmail($errorMSG, $email, $numero_totale){
 
 // prepare email body text
     $Body = "";
-    $Body .= "Buongiorno,<br>secondo i dati da Lei inseriti sul sito www.clientoteca.com queste sono le possibili connessioni sul territorio:";
-    $Body .= "\n";
-    $Body .= "\n";
-    $Body .= "Numero leads: ";
-    $Body .= $numero_totale * 0.66;
-    $Body .= "\n\n";
-    $Body .= "Target invio presentazione: ";
-    $Body .= $numero_totale * 0.22;
-    $Body .= "\n\n";
-    $Body .= "Numero di appuntamenti accettati: ";
-    $Body .= $numero_totale * 0.06;
-    $Body .= "\n\n";
-    $Body .= "Numero clienti: ";
-    $Body .= $numero_totale * 0.03;
-    $Body .= "\n\n";
-    $Body .= "Numero email raccolte: ";
-    $Body .= ($numero_totale * 0.66) * 0.3375;
-    $Body .= "\n\n";
+    $Body .= "<p>Buongiorno,<br>secondo i dati da Lei inseriti sul sito www.clientoteca.com queste sono le possibili connessioni sul territorio:</p>";
+    $Body .= "<table>";
+    $Body .= "<tr>";
+    $Body .= "<td>Numero leads</td>";
+    $Body .= "<td>round($numero_totale * 0.66)</td>";
+    $Body .= "<tr>";
+    $Body .= "<tr>";
+    $Body .= "<td>Target invio presentazione</td>";
+    $Body .= "<td>round($numero_totale * 0.22)</td>";
+    $Body .= "<tr>";
+    $Body .= "<tr>";
+    $Body .= "<td>Numero di appuntamenti accettati</td>";
+    $Body .= "<td>round($numero_totale * 0.06)</td>";
+    $Body .= "<tr>";
+    $Body .= "<tr>";
+    $Body .= "<td>Numero clienti</td>";
+    $Body .= "<td>round($numero_totale * 0.03)</td>";
+    $Body .= "<tr>";
+    $Body .= "<tr>";
+    $Body .= "<td>Numero email raccolte</td>";
+    $Body .= "<td>round(($numero_totale * 0.66) * 0.3375)</td>";
+    $Body .= "<tr>";
+    $Body .= "</table>";
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -89,5 +94,4 @@ function SendEmail($errorMSG, $email, $numero_totale){
     }
 }
 
-// SEND EMAL
 
