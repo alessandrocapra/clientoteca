@@ -54,7 +54,7 @@ function processForm() {
         url: "../php/form-process.php",
         data: "id=" + $macro.val() + "&regione=" + $regione.val() + "&email=" + $email.val() ,
         success : function(text){
-            $result.show().removeClass().addClass("success").html('<i class="glyphicon glyphicon-thumbs-up"></i><span>Iscrizione effettuata con successo!</span>');
+            $result.show().removeClass().addClass("success").html('<i class="glyphicon glyphicon-thumbs-up"></i><span>Email dettagliata inviata all\'indirizzo specificato!</span>');
         },
 
     });

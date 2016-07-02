@@ -63,7 +63,7 @@
 <!--				<h1 class="titolo">Trova nuovi potenziali clienti!</h1>-->
 				<div class="col-sm-10 col-sm-offset-1">
 					<div class="row">
-						<form action="" onsubmit="event.preventDefault();processForm();">
+						<form class="col-sm-12" action="" onsubmit="event.preventDefault();processForm();">
 							<div class="col-sm-3">
 <!--								<h2>Tipo di attività</h2>-->
 								<h3>Settore</h3>
@@ -109,8 +109,10 @@
 							<div class="col-sm-12">
 								<input type="submit" id="trovaClienti" value="Trova Clienti">
 							</div>
-							<p id="result"></p>
 						</form>
+						<div class="col-sm-12">
+							<p id="result"></p>
+						</div>
 					</div>
 			</section>
 		</article>
