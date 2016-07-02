@@ -44,32 +44,47 @@ function SendEmail($errorMSG, $email, $numero_totale){
     $EmailTo = $email;
     $Subject = "Riepilogo dati - Clientoteca";
 
-    var_dump($email, $numero_totale);
+    $leads = round($numero_totale * 0.66);
+    $target = round($numero_totale * 0.22);
+    $appuntamenti = round($numero_totale * 0.06);
+    $clienti = round($numero_totale * 0.03);
+    $email_raccolte = round(($numero_totale * 0.66) * 0.3375);
+
 
 // prepare email body text
     $Body = "";
     $Body .= "<p>Buongiorno,<br>secondo i dati da Lei inseriti sul sito www.clientoteca.com queste sono le possibili connessioni sul territorio:</p>";
     $Body .= "<table>";
     $Body .= "<tr>";
-    $Body .= "<td>Numero leads</td>";
-    $Body .= "<td>round($numero_totale * 0.66)</td>";
+    $Body .= "<td><strong>Numero leads</strong></td>";
+    $Body .= "<td style='padding-left: 20px'>";
+    $Body .= $leads;
+    $Body .= "</td>";
+    $Body .= "</tr>";
     $Body .= "<tr>";
+    $Body .= "<td><strong>Target invio presentazione</strong></td>";
+    $Body .= "<td style='padding-left: 20px'>";
+    $Body .= $target;
+    $Body .= "</td>";
+    $Body .= "</tr>";
     $Body .= "<tr>";
-    $Body .= "<td>Target invio presentazione</td>";
-    $Body .= "<td>round($numero_totale * 0.22)</td>";
+    $Body .= "<td><strong>Numero di appuntamenti accettati</strong></td>";
+    $Body .= "<td style='padding-left: 20px'>";
+    $Body .= $appuntamenti;
+    $Body .= "</td>";
+    $Body .= "</tr>";
     $Body .= "<tr>";
+    $Body .= "<td><strong>Numero clienti</strong></td>";
+    $Body .= "<td style='padding-left: 20px'>";
+    $Body .= $clienti;
+    $Body .= "</td>";
+    $Body .= "</tr>";
     $Body .= "<tr>";
-    $Body .= "<td>Numero di appuntamenti accettati</td>";
-    $Body .= "<td>round($numero_totale * 0.06)</td>";
-    $Body .= "<tr>";
-    $Body .= "<tr>";
-    $Body .= "<td>Numero clienti</td>";
-    $Body .= "<td>round($numero_totale * 0.03)</td>";
-    $Body .= "<tr>";
-    $Body .= "<tr>";
-    $Body .= "<td>Numero email raccolte</td>";
-    $Body .= "<td>round(($numero_totale * 0.66) * 0.3375)</td>";
-    $Body .= "<tr>";
+    $Body .= "<td><strong>Numero email raccolte</strong></td>";
+    $Body .= "<td style='padding-left: 20px'>";
+    $Body .= $email_raccolte;
+    $Body .= "</td>";
+    $Body .= "</tr>";
     $Body .= "</table>";
 
     $headers = "MIME-Version: 1.0\r\n";
@@ -94,4 +109,5 @@ function SendEmail($errorMSG, $email, $numero_totale){
     }
 }
 
+// SEND EMAL
 
