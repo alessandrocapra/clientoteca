@@ -6,15 +6,15 @@
  * Time: 22:40
  */
 
-$servername = "localhost";
-$username = "clientoteca";
-$password = "clientoteca";
-$dbname = "clientoteca";
+//$servername = "localhost";
+//$username = "clientoteca";
+//$password = "clientoteca";
+//$dbname = "clientoteca";
 
-//$servername = "89.31.72.141";
-//$username = "loilvu84_cliento";
-//$password = "UfAPWHns";
-//$dbname = "clientoteca_com_categorie";
+$servername = "89.31.72.141";
+$username = "loilvu84_cliento";
+$password = "UfAPWHns";
+$dbname = "clientoteca_com_categorie";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
