@@ -12,6 +12,28 @@ function processForm() {
     var $regione = $('#regione');
     var $result = $('#result');
 
+    // check selected options
+    if ($mega.val() === 'defaultMega') {
+        console.log("Selezionare settore");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare settore');
+        return false;
+    }
+
+    if ($macro.val() === 'defaultMacro') {
+        console.log("Selezionare attività");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare attività');
+        return false;
+    }
+
+    if ($regione.val() === 'defaultRegione') {
+        console.log("Selezionare regione");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare regione');
+        return false;
+    }
+
     if (!$email.val()) {
         console.log("Email vuota");
         $result.show();
@@ -26,28 +48,6 @@ function processForm() {
         }
     }
 
-    // check selected options
-    if ($mega.val().is('defaultMega')) {
-        console.log("Selezionare settore");
-        $result.show();
-        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare settore');
-        return false;
-    }
-
-    if ($macro.val().is('defaultMacro')) {
-        console.log("Selezionare attività");
-        $result.show();
-        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare attività');
-        return false;
-    }
-
-    if ($regione.val().is('defaultRegione')) {
-        console.log("Selezionare regione");
-        $result.show();
-        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Selezionare regione');
-        return false;
-    }
-
     // send email
     $.ajax({
         type: "POST",
@@ -55,7 +55,8 @@ function processForm() {
         data: "id=" + $macro.val() + "&regione=" + $regione.val() + "&email=" + $email.val() ,
         success : function(text){
             $result.show().removeClass().addClass("success").html('<i class="glyphicon glyphicon-thumbs-up"></i><span>Iscrizione effettuata con successo!</span>');
-        }
+        },
+
     });
 }
 
@@ -80,7 +81,7 @@ $(document).ready(function(){
            cache: false,
            success: function(html)
            {
-               $("#macro").html(html);
+               $("#macro").append(html);
            }
        });
    });
@@ -95,7 +96,7 @@ $(document).ready(function(){
             success: function(html)
             {
                 console.log(html);
-                $("#regione").html(html);
+                $("#regione").append(html);
             }
         });
     });

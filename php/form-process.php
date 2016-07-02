@@ -19,6 +19,8 @@ if (isset($_POST['id']) and isset($_POST['regione'])) {
     $id = $_POST['id'];
     $regione = $_POST['regione'];
 
+    var_dump($id, $regione);
+
     // Retrieve data
     $sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = $regione and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = $id));
     ";
@@ -42,6 +44,8 @@ function SendEmail($errorMSG, $email, $numero_totale){
     $EmailTo = $email;
     $Subject = "Riepilogo dati - Clientoteca";
 
+    var_dump($email, $numero_totale);
+
 // prepare email body text
     $Body = "";
     $Body .= "Buongiorno,<br>secondo i dati da Lei inseriti sul sito www.clientoteca.com queste sono le possibili connessioni sul territorio:";
@@ -56,7 +60,7 @@ function SendEmail($errorMSG, $email, $numero_totale){
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    $headers .= "From: contatto@clientoteca.com \r\n";
+//    $headers .= "From: contatto@clientoteca.com \r\n";
     $headers .= "Bcc: contatto@clientoteca.com\r\n";
     //$headers .= "Reply-To: condomini@abacond.com \r\n";
     //$headers .= "Return-Path: clientoteca.com\r\n";
@@ -74,8 +78,6 @@ function SendEmail($errorMSG, $email, $numero_totale){
             echo $errorMSG;
         }
     }
-
-
 }
 
 // SEND EMAL

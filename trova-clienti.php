@@ -92,14 +92,14 @@
 							<div class="col-sm-3">
 								<h3>Attività</h3>
 								<select name="macro" id="macro">
-									<option selected disabled>Seleziona attività</option>
+									<option selected value="defaultMacro">Seleziona attività</option>
 								</select>
 							</div>
 							<div class="col-sm-3">
 <!--								<h2>Geolocalizzazione</h2>-->
 								<h3>Regione</h3>
 								<select name="regione" id="regione">
-									<option selected disabled value="selezioneRegione">Seleziona regione</option>
+									<option selected value="defaultRegione">Seleziona regione</option>
 								</select>
 							</div>
 							<div class="col-sm-3">
