@@ -130,6 +130,10 @@ select {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
+    @media all and (max-width: 320px) {
+        margin-bottom: 1em;
+    }
 }
 
 input[type=email] {
