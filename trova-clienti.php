@@ -131,17 +131,20 @@
 	<footer class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4">
-				<h3>Lista di qualcosa</h3>
-				<ul>
-					<li>Primo</li>
-					<li>Secondo</li>
-					<li>Terzo</li>
-					<li>Quarto</li>
+				<h3>Servizi offerti</h3>
+				<ul class="services">
+					<li>Web</li>
+					<li>Brochure</li>
+					<li>Sondaggi</li>
+					<li>Seo</li>
+					<li>Newsletter</li>
+					<li>Training</li>
 				</ul>
 			</div>
 			<div class="col-sm-4">
 				<h3>Clientoteca srl</h3>
-				<p>Via S. Caterina 64 - Arco (TN)</p>
+				<p>Via S. Caterina 74/D - Arco (TN)</p>
+				<p>P.IVA 02401360223</p>
 				<ul class="vertical">
 					<li><i class="fa fa-facebook-f fa-2x"></i></li>
 					<li><i class="fa fa-twitter fa-2x"></i></li>
@@ -149,8 +152,8 @@
 				</ul>
 			</div>
 			<div class="col-sm-4">
-				<h3>Cosa mettiamo qui?</h3>
-				<p>Potrebbe esserci qualche link a qualche contenuto del sito, altrimenti ci piazzo la cookie e privacy policy.</p>
+				<h3>Privacy policy</h3>
+				<a href="//www.iubenda.com/privacy-policy/7817932" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 			</div>
 		</div>
 	</footer>
