@@ -104,6 +104,7 @@ input[type=submit] {
 
 #result {
   display: none;
+  text-align: center;
   font-size: 1.6em;
   background-color: rgba(255, 255, 255, 0.5);
   margin-top: 1em;

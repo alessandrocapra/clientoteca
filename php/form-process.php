@@ -71,12 +71,12 @@ function SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $numero_total
     $Body = "";
     $Body .= "<p>Gentile ";
     $Body .= $nomeContatto;
-    $Body .= "di ";
+    $Body .= " di ";
     $Body .= $nomeAzienda;
     $Body .= ",<br>grazie per la tua richiesta!</p>";
     $Body .= "<p>Secondo noi vi sono ";
     $Body .= $target;
-    $Body .= "aziende interessate a ricevere una vostra presentazione.<br>A seguito nostro contatto riteniamo che ";
+    $Body .= " aziende interessate a ricevere una vostra presentazione.<br>A seguito nostro contatto riteniamo che ";
     $Body .= $appuntamenti;
     $Body .= " accetteranno la visita da parte di un vostro tecnico-commerciale e ";
     $Body .= $clienti;

@@ -15,14 +15,14 @@ function processForm() {
     var $result = $('#result');
 
     // check selected options
-    if (nomeContatto.val()) {
+    if (!nomeContatto.val()) {
         console.log("Inserire dettagli del referente");
         $result.show();
         $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Inserire dettagli del referente');
         return false;
     }
 
-    if (nomeAzienda.val()) {
+    if (!nomeAzienda.val()) {
         console.log("Inserire nominativo dell'azienda");
         $result.show();
         $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Inserire nominativo dell\'azienda');
