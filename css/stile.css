@@ -74,7 +74,7 @@ i {
 label {
   width: 100%; }
 
-select, input[type=email] {
+select, input[type=email], input[type=text] {
   width: 100%;
   padding: 5px;
   line-height: 26px;
@@ -83,10 +83,10 @@ select, input[type=email] {
   white-space: nowrap;
   overflow: hidden; }
   @media all and (max-width: 320px) {
-    select, input[type=email] {
+    select, input[type=email], input[type=text] {
       margin-bottom: 1em; } }
 
-input[type=email] {
+input[type=email], input[type=text] {
   border: 0;
   padding: 7px; }
 

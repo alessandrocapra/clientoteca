@@ -1,8 +1,24 @@
 <?php
 $errorMSG = "";
+$nomeContatto = "";
+$nomeAzienda = "";
 $email = "";
 $id = "";
 $regione = "";
+
+// NOME CONTATTO
+if (empty($_POST["nomeContatto"])) {
+    $errorMSG .= "E' obbligatorio inserire un referente per il contatto.";
+} else {
+    $nomeContatto = $_POST["nomeContatto"];
+}
+
+// NOME CONTATTO
+if (empty($_POST["nomeAzienda"])) {
+    $errorMSG .= "E' obbligatorio inserire un nominativo per l'azienda.";
+} else {
+    $nomeAzienda = $_POST["nomeAzienda"];
+}
 
 // EMAIL
 if (empty($_POST["email"])) {
@@ -19,7 +35,7 @@ if (isset($_POST['id']) and isset($_POST['regione'])) {
     $id = $_POST['id'];
     $regione = $_POST['regione'];
 
-    var_dump($id, $regione);
+//    var_dump($id, $regione);
 
     // Retrieve data
     $sql = "select sum(numero_totale) from RegioneMicroJunction where regione_id = $regione and micro_id in (select id from Micro where macro_id in (select customer_id from MacroJunction where macro_id = $id));
@@ -30,7 +46,7 @@ if (isset($_POST['id']) and isset($_POST['regione'])) {
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            SendEmail($errorMSG, $email, $row["sum(numero_totale)"]);
+            SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $row["sum(numero_totale)"]);
         }
     } else {
         echo "0 results";
@@ -39,7 +55,7 @@ if (isset($_POST['id']) and isset($_POST['regione'])) {
 
 $conn->close();
 
-function SendEmail($errorMSG, $email, $numero_totale){
+function SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $numero_totale){
 
     $EmailTo = $email;
     $Subject = "Riepilogo dati - Clientoteca";
@@ -53,7 +69,11 @@ function SendEmail($errorMSG, $email, $numero_totale){
 
 // prepare email body text
     $Body = "";
-    $Body .= "<p>Buongiorno,<br>secondo i dati da Lei inseriti sul sito www.clientoteca.com queste sono le possibili connessioni sul territorio:</p>";
+    $Body .= "<p>Gentile ";
+    $Body .= $nomeContatto;
+    $Body .= "di ";
+    $Body .= $nomeAzienda;
+    $Body .= ",<br>grazie per la tua richiesta!</p>";
     $Body .= "<table>";
     $Body .= "<tr style='padding-bottom: 20px;'>";
     $Body .= "<td><b>Numero leads</b></td>";

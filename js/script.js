@@ -6,6 +6,8 @@ function validateEmail(email) {
 function processForm() {
 
     // check email
+    var nomeContatto = $('#nomeContatto');
+    var nomeAzienda = $('#nomeAzienda');
     var $email = $('#email');
     var $mega = $('#mega');
     var $macro = $('#macro');
@@ -13,6 +15,20 @@ function processForm() {
     var $result = $('#result');
 
     // check selected options
+    if (nomeContatto.val()) {
+        console.log("Inserire dettagli del referente");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Inserire dettagli del referente');
+        return false;
+    }
+
+    if (nomeAzienda.val()) {
+        console.log("Inserire nominativo dell'azienda");
+        $result.show();
+        $result.removeClass().addClass("error").html('<i class="glyphicon glyphicon-thumbs-down"></i>Inserire nominativo dell\'azienda');
+        return false;
+    }
+
     if ($mega.val() === 'defaultMega') {
         console.log("Selezionare settore");
         $result.show();
@@ -52,7 +68,7 @@ function processForm() {
     $.ajax({
         type: "POST",
         url: "../php/form-process.php",
-        data: "id=" + $macro.val() + "&regione=" + $regione.val() + "&email=" + $email.val() ,
+        data: "nomeContatto=" + nomeContatto.val() + "&nomeAzienda=" + nomeAzienda.val() + "&id=" + $macro.val() + "&regione=" + $regione.val() + "&email=" + $email.val() ,
         success : function(text){
             $result.show().removeClass().addClass("success").html('<i class="glyphicon glyphicon-thumbs-up"></i><span>Email dettagliata inviata all\'indirizzo specificato!</span>');
         },
@@ -67,7 +83,7 @@ function processForm() {
 $(document).ready(function(){
 
     // validation
-    console.log($('select#mega option:selected').val());
+    // console.log($('select#mega option:selected').val());
 
    $('#mega').on('change', function() {
        var mega_id = this.value;

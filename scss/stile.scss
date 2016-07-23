@@ -136,7 +136,7 @@ select {
     }
 }
 
-input[type=email] {
+input[type=email], input[type=text] {
     @extend select;
     border: 0;
     padding:7px;
