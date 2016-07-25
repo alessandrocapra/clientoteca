@@ -2,9 +2,11 @@
 $errorMSG = "";
 $nomeContatto = "";
 $nomeAzienda = "";
+$macroName = "";
 $email = "";
 $id = "";
 $regione = "";
+$regioneName = "";
 
 // NOME CONTATTO
 if (empty($_POST["nomeContatto"])) {
@@ -33,7 +35,9 @@ include('dbconnection.php');
 if (isset($_POST['id']) and isset($_POST['regione'])) {
 
     $id = $_POST['id'];
+    $macroName = $_POST['macroName'];
     $regione = $_POST['regione'];
+    $regioneName = $_POST['regioneName'];
 
 //    var_dump($id, $regione);
 
@@ -46,7 +50,7 @@ if (isset($_POST['id']) and isset($_POST['regione'])) {
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $row["sum(numero_totale)"]);
+            SendEmail($nomeContatto, $nomeAzienda, $macroName, $regioneName, $errorMSG, $email, $row["sum(numero_totale)"]);
         }
     } else {
         echo "0 results";
@@ -55,7 +59,7 @@ if (isset($_POST['id']) and isset($_POST['regione'])) {
 
 $conn->close();
 
-function SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $numero_totale){
+function SendEmail($nomeContatto, $nomeAzienda, $macroName, $regioneName, $errorMSG, $email, $numero_totale){
 
     $EmailTo = $email;
     $Subject = "Riepilogo dati - Clientoteca";
@@ -64,7 +68,7 @@ function SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $numero_total
     $target = round($numero_totale * 0.22);
     $appuntamenti = round($numero_totale * 0.06);
     $clienti = round($numero_totale * 0.03);
-    $email_raccolte = round(($numero_totale * 0.66) * 0.3375);
+    $email_raccolte = round($leads * 0.3375);
 
 
 // prepare email body text
@@ -74,6 +78,11 @@ function SendEmail($nomeContatto, $nomeAzienda, $errorMSG, $email, $numero_total
     $Body .= " di ";
     $Body .= $nomeAzienda;
     $Body .= ",<br>grazie per la tua richiesta!</p>";
+    $Body .= "<p>Di seguito ti riportiamo i dati per il settore ";
+    $Body .= $macroName;
+    $Body .= " in ";
+    $Body .= $regioneName;
+    $Body .= "</p>";
     $Body .= "<p>Secondo noi vi sono ";
     $Body .= $target;
     $Body .= " aziende interessate a ricevere una vostra presentazione.<br>A seguito nostro contatto riteniamo che ";

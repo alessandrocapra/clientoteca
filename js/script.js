@@ -64,11 +64,14 @@ function processForm() {
         }
     }
 
+    var $macroName = $('#macro option:selected').text();
+    var $regioneName = $('#regione option:selected').text();
+
     // send email
     $.ajax({
         type: "POST",
         url: "../php/form-process.php",
-        data: "nomeContatto=" + nomeContatto.val() + "&nomeAzienda=" + nomeAzienda.val() + "&id=" + $macro.val() + "&regione=" + $regione.val() + "&email=" + $email.val() ,
+        data: "nomeContatto=" + nomeContatto.val() + "&nomeAzienda=" + nomeAzienda.val() + "&id=" + $macro.val() + "&macroName=" + $macroName + "&regione=" + $regione.val() + "&regioneName=" + $regioneName + "&email=" + $email.val() ,
         success : function(text){
             $result.show().removeClass().addClass("success").html('<i class="glyphicon glyphicon-thumbs-up"></i><span>Email dettagliata inviata all\'indirizzo specificato!</span>');
         },

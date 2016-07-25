@@ -131,7 +131,7 @@ select {
     white-space: nowrap;
     overflow: hidden;
 
-    @media all and (max-width: 320px) {
+    @media (max-width: 360px) {
         margin-bottom: 1em;
     }
 }
